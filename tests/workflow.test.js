@@ -45,7 +45,7 @@ test('classifier fans out: one branch per category plus other, all ending in the
 test('one Sarvam-105B model node powers all three n8n AI nodes', () => {
   const llm = byName['Sarvam-105B'];
   assert.equal(llm.type, '@n8n/n8n-nodes-langchain.lmChatOpenAi');
-  assert.equal(llm.parameters.model.value, 'sarvam-105b');
+  assert.match(llm.parameters.model.value, /^sarvam-105b/);
   const fed = wf.connections['Sarvam-105B'].ai_languageModel[0].map((c) => c.node).sort();
   assert.deepEqual(fed, ['Classify', 'Extract Action Items', 'Summarize Meeting']);
 });

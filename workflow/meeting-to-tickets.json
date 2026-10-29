@@ -8,7 +8,7 @@
         "width": 820,
         "color": 7
       },
-      "id": "c0e53039-1184-4c05-883d-29c86977862f",
+      "id": "d3fff7b4-91d4-4039-bc02-13b27cbc33e1",
       "name": "Sticky: Hero",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -24,7 +24,7 @@
         "width": 1560,
         "color": 4
       },
-      "id": "72a7c1c1-d88d-4fc0-9926-7d0534c1c796",
+      "id": "918cbc31-5055-40e6-80f7-12a79b25a2f1",
       "name": "Sticky: Warm-up",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -40,7 +40,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "df369580-a223-4ccd-8ca7-114259234f5c",
+      "id": "c0b7686b-b32f-46ca-9808-40fef90aede8",
       "name": "Sticky: Warm-up STT",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -51,7 +51,7 @@
     },
     {
       "parameters": {},
-      "id": "cb45c97c-8993-468f-b752-20eddcf3d929",
+      "id": "81121955-601d-472f-bec1-5fa30214f912",
       "name": "▶ Hear",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -65,7 +65,7 @@
         "fileSelector": "/samples/standup-hindi.wav",
         "options": {}
       },
-      "id": "cf81c4bd-d38c-4af9-8c29-9d47439395c3",
+      "id": "b91853b2-d9f3-4f93-a66d-0001ce952041",
       "name": "Try: Read sample",
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
@@ -85,7 +85,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "da6b5c0c-727a-4b05-98dc-c022fd5719bc",
+      "id": "a27f99d7-b3e7-48d0-a122-6ba10ad1727b",
       "name": "Try: Speech to Text",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -101,7 +101,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "b461346a-72a1-4dbf-a720-b661e5277be5",
+      "id": "8ce5e8df-c0bd-4b3e-858b-0ef4a21928f2",
       "name": "Sticky: Warm-up Chat",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -112,7 +112,7 @@
     },
     {
       "parameters": {},
-      "id": "479c6838-9e2d-4a87-ab4f-5eb179b68ea0",
+      "id": "6d71b23d-fb47-4361-b5b5-7ebd21c27cda",
       "name": "▶ Think",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -134,7 +134,7 @@
           "reasoning_effort": "none"
         }
       },
-      "id": "6c89b548-1b32-4dea-ad96-ccd103e4c341",
+      "id": "4fdc1dfd-a379-454e-a568-4b2082ca90f0",
       "name": "Try: Chat",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -150,7 +150,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "83c7d6a2-8abd-4ac2-b465-fa31fe228f4e",
+      "id": "8538b5ca-c110-4b78-91c8-f3651f7b42e9",
       "name": "Sticky: Warm-up TTS",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -161,7 +161,7 @@
     },
     {
       "parameters": {},
-      "id": "6304690a-c303-48c5-854c-579b79c8c710",
+      "id": "4ee16dbb-0482-443e-8e06-76b1077f233e",
       "name": "▶ Speak",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -182,7 +182,7 @@
           "output_audio_codec": "mp3"
         }
       },
-      "id": "6c014900-84a9-4ce0-91d7-10a1f3b468c0",
+      "id": "a47c4289-d276-4781-979f-4f23dd92f59f",
       "name": "Try: Text to Speech",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -198,7 +198,7 @@
         "width": 2900,
         "color": 5
       },
-      "id": "0e2aa3b6-1f2b-49e7-894f-512b5fc2ee29",
+      "id": "115eef31-7513-496f-b9bf-61a56c56843b",
       "name": "Sticky: Pipeline",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -209,12 +209,12 @@
     },
     {
       "parameters": {
-        "content": "### 1 · Upload\nAny audio. Optional meeting title.",
+        "content": "### 1 · Upload\nAny audio ≤ 30 s (real-time STT limit; Batch API for longer). Optional meeting title.",
         "height": 420,
         "width": 260,
         "color": 7
       },
-      "id": "07f0ed76-dc79-4b80-9e03-df90e51b3368",
+      "id": "85704de3-48eb-4b50-aa53-ef33482013d6",
       "name": "Sticky: Upload",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -230,7 +230,7 @@
         "width": 260,
         "color": 5
       },
-      "id": "9b79ab74-b409-4879-b2ff-22bc716801c5",
+      "id": "6e12dd4b-d729-4286-8fbe-6da54b117beb",
       "name": "Sticky: Config",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -246,7 +246,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "57b858cb-e66f-4899-a778-b1f1656807fa",
+      "id": "f795118c-99d4-413c-99f1-7462e9121d5c",
       "name": "Sticky: Hear",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -262,7 +262,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "a3493e4e-9c58-4191-b280-a5f0346709b0",
+      "id": "c089fe27-4b60-4e95-b46d-bdf44c1d86ee",
       "name": "Sticky: Guard",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -278,7 +278,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "1f326642-2223-4aca-8259-1addda2b4e28",
+      "id": "b595065a-a2ec-437a-98de-f7958aa1a203",
       "name": "Sticky: Summarize",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -294,7 +294,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "0e8aa092-f6ad-4cf0-aceb-a4f7223e50e9",
+      "id": "ce53c8cf-e26a-41b0-b946-2d23e3be7913",
       "name": "Sticky: Extract",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -310,7 +310,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "268ca05f-4000-4462-a31b-1dea0010d552",
+      "id": "4d616689-c396-474a-a9ac-d7469378f2cb",
       "name": "Sticky: Split",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -326,7 +326,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "df18ae55-5096-4099-8653-25d3f0f52148",
+      "id": "dd114a56-d18a-49af-80c5-feb581c32bf0",
       "name": "Sticky: Classify",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -338,7 +338,7 @@
     {
       "parameters": {
         "formTitle": "Turn a meeting into tickets",
-        "formDescription": "Upload a recording or voice note in any Indian language.",
+        "formDescription": "Upload a recording or voice note in any Indian language (up to 30 seconds for the real-time API).",
         "formFields": {
           "values": [
             {
@@ -360,7 +360,7 @@
           "buttonLabel": "Create tickets"
         }
       },
-      "id": "e5912a2d-99a6-4cb1-9ec4-cf32045cf788",
+      "id": "4955123c-2753-469e-85a3-e004f24d225e",
       "name": "Upload Recording",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.5,
@@ -368,26 +368,26 @@
         0,
         300
       ],
-      "webhookId": "504d9d93-9fd9-4f89-83f9-87699dec6e7e"
+      "webhookId": "b15a43a0-d08e-41f9-8ab3-d4c884669100"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "56adb3e9-13a7-4d25-aa9b-e490c65ea558",
+              "id": "3228bf61-99ba-4858-b491-47d08762cb79",
               "name": "githubOwner",
               "value": "thekaailashsharma",
               "type": "string"
             },
             {
-              "id": "c0eb9b50-a0b9-4c23-9770-a64c24b7ecf6",
+              "id": "4ad7b784-6f2a-44fc-8333-ecbb19d57a99",
               "name": "githubRepo",
               "value": "sarvam-n8n-workshop",
               "type": "string"
             },
             {
-              "id": "4619a45a-4cc5-4f62-8a6b-c134c819b837",
+              "id": "5ef6a04e-8faf-406e-8798-945613150ede",
               "name": "sheetId",
               "value": "1HPR_t2damLpDcFWbpqroAWEptLP_hsNk3cdkCr4oIjo",
               "type": "string"
@@ -397,7 +397,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "031d6b82-1383-4e36-8972-03f706211b3f",
+      "id": "483df991-6457-43f6-afa4-335b2d30ce7e",
       "name": "Config",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -417,7 +417,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "c0c88568-a9fb-4b57-b562-fa5df4fae537",
+      "id": "13470072-1d76-466a-8af7-88d18095e05d",
       "name": "Sarvam: Transcribe",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -437,7 +437,7 @@
           },
           "conditions": [
             {
-              "id": "73fc414a-bb0a-4282-8f05-6d3634da8178",
+              "id": "fc2128ae-412f-4521-a61f-183d8d9f60fb",
               "leftValue": "={{ ($json.transcript || '').trim().length }}",
               "rightValue": 20,
               "operator": {
@@ -450,7 +450,7 @@
         },
         "options": {}
       },
-      "id": "9ea4e768-7d00-4895-9417-4a1b38f18003",
+      "id": "4a5690c9-29f2-4ba0-b071-473509ef4a1e",
       "name": "Heard Anything?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
@@ -467,7 +467,7 @@
         "completionMessage": "The recording seems silent or too short. Please try again with a clearer file.",
         "options": {}
       },
-      "id": "4116d01b-d62f-4374-a49c-f27bb39709b5",
+      "id": "d725e1a3-d464-4949-bf72-91f43acef15e",
       "name": "Couldn't Hear",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -475,7 +475,7 @@
         900,
         500
       ],
-      "webhookId": "313c3289-3866-4fe6-9efd-97be9314b33f"
+      "webhookId": "212dc6e9-396c-449d-bce4-195157d7c70d"
     },
     {
       "parameters": {
@@ -492,7 +492,7 @@
           }
         }
       },
-      "id": "8826ee79-5d8b-4a9f-b4ac-23ac7a764a72",
+      "id": "1d4a32ba-11b9-41fb-b9ea-b3a52ab4c7d0",
       "name": "Summarize Meeting",
       "type": "@n8n/n8n-nodes-langchain.chainSummarization",
       "typeVersion": 2.1,
@@ -510,7 +510,7 @@
           "systemPromptTemplate": "You are an expert meeting scribe. Extract every action item, decision and follow-up from the transcript. Never invent names or dates. {format_instructions}"
         }
       },
-      "id": "6c36f0c9-1a98-40ac-aa49-b6a9f0355b3d",
+      "id": "c052dbeb-d002-45e1-b83c-a449164cb8c4",
       "name": "Extract Action Items",
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.2,
@@ -525,7 +525,7 @@
         "include": "noOtherFields",
         "options": {}
       },
-      "id": "b6e1c4fc-1860-417b-bf17-56be5b62fd3c",
+      "id": "14528776-b111-41bd-b1a0-6bdab21f4fc1",
       "name": "One Item per Action",
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
@@ -566,7 +566,7 @@
           "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."
         }
       },
-      "id": "aa4354a5-2e54-45d3-ba3f-e76076e75234",
+      "id": "f4026297-af60-42b8-b1bb-936d4188cc9d",
       "name": "Classify",
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
@@ -580,13 +580,14 @@
         "model": {
           "__rl": true,
           "mode": "id",
-          "value": "sarvam-105b"
+          "value": "sarvam-105b-conversations"
         },
         "options": {
-          "temperature": 0
+          "temperature": 0,
+          "maxTokens": 2048
         }
       },
-      "id": "37c91607-6948-4536-a665-6d79686e100b",
+      "id": "8fdf1b49-edfb-4749-ac9b-77414032967d",
       "name": "Sarvam-105B",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
@@ -597,12 +598,12 @@
     },
     {
       "parameters": {
-        "content": "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.",
+        "content": "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.\n`sarvam-105b-conversations` answers directly; plain `sarvam-105b` thinks first and needs a much bigger token budget.",
         "height": 220,
         "width": 560,
         "color": 6
       },
-      "id": "5071a383-574a-44fb-b66c-31a444d63ee4",
+      "id": "c6fd11bf-9b99-4487-9ae1-6621a4325d31",
       "name": "Sticky: LLM",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -618,7 +619,7 @@
         "width": 600,
         "color": 1
       },
-      "id": "7367a045-1f9c-4c38-acd5-b819560f1d16",
+      "id": "6719c238-127b-4335-9cbe-249e4dd37656",
       "name": "Sticky: Branches",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -651,7 +652,7 @@
         ],
         "assignees": []
       },
-      "id": "512c0bed-c397-4bd0-b78e-81df282a489c",
+      "id": "a7841367-e609-445c-ab81-126c2208d964",
       "name": "GitHub: Bug Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -684,7 +685,7 @@
         ],
         "assignees": []
       },
-      "id": "e965551a-6b6c-4a3e-a276-afc32262049e",
+      "id": "26f5aa0d-bf2f-4064-8b66-aad4e1c87b17",
       "name": "GitHub: Feature Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -712,7 +713,7 @@
           "description": "={{ $json.detail }}"
         }
       },
-      "id": "9e5d4855-0e7d-4403-98b0-0661221503d9",
+      "id": "3abcac2f-9d0b-4a90-a996-44820be78091",
       "name": "Jira: Task (disabled)",
       "type": "n8n-nodes-base.jira",
       "typeVersion": 1,
@@ -727,7 +728,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "852718c3-152b-4d2d-b6ce-58e9587d809b",
+              "id": "dfe06749-19a9-48ff-bc90-c269920fd264",
               "name": "type",
               "value": "task",
               "type": "string"
@@ -737,7 +738,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "0406730b-3f8a-44cc-a1f7-bbf5299124a3",
+      "id": "45f533c5-57f5-4dfb-88a8-08c3cf86be5d",
       "name": "Tag: Task",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -751,7 +752,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "6e578486-9cd5-4260-8053-55f1fc60235f",
+              "id": "41d6e104-5c0d-48c0-a8c2-ef4d842db8d3",
               "name": "type",
               "value": "decision",
               "type": "string"
@@ -761,7 +762,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "423f8625-decf-4187-8cb1-9706bdc45e11",
+      "id": "42ae8238-2145-4986-8517-533919813d91",
       "name": "Tag: Decision",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -775,7 +776,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "c6493352-9ffc-4925-93f9-e57373f04369",
+              "id": "99b4c683-bddc-4620-8ca6-0ea334cd5ad4",
               "name": "type",
               "value": "followup",
               "type": "string"
@@ -785,7 +786,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "f5716c82-f5d1-46a1-9fdd-8a3c55c7d041",
+      "id": "cb7efd93-e77c-4faa-80f2-4c118552a5ba",
       "name": "Tag: Follow-up",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -799,7 +800,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "b1e2ed63-142e-4780-a0b6-50b63a04aceb",
+              "id": "43adb6ae-1cc7-4c1a-aefa-330fd4e05ebc",
               "name": "type",
               "value": "other",
               "type": "string"
@@ -809,7 +810,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "8b8a0956-2227-4418-ba44-d99fb1bef9e1",
+      "id": "94083989-238f-4154-a77a-aaf29581f745",
       "name": "Tag: Other",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -825,7 +826,7 @@
         "width": 820,
         "color": 4
       },
-      "id": "703bb444-25f4-4227-9fed-3f5a859c3e63",
+      "id": "37a7ed3d-304e-4a24-80f0-ad7b49ffeb30",
       "name": "Sticky: Record",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -959,7 +960,7 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "08c512b2-01d7-47cc-be20-9fd3a422184e",
+      "id": "8f49d741-b062-48ee-b452-69f2d14623f7",
       "name": "Log to Sheet",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -973,7 +974,7 @@
         "aggregate": "aggregateAllItemData",
         "options": {}
       },
-      "id": "4f123b80-6431-4d09-bdcc-a6a8fa980319",
+      "id": "113bc5f5-f264-4291-a72e-1e468cdf2f42",
       "name": "Collect Results",
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
@@ -989,7 +990,7 @@
         "responseText": "={{ (() => {\n  const items = $json.data || [];\n  const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();\n  const lang = $('Sarvam: Transcribe').first().json.language_code;\n  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href=\"${i.Link}\" target=\"_blank\">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}</small></li>`;\n  return `<div style=\"font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5\">\n    <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>\n    <p style=\"color:#666\">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>\n    <h3>Summary</h3><pre style=\"white-space:pre-wrap;background:#f6f6f8;padding:12px;border-radius:8px\">${summary}</pre>\n    <h3>Tickets</h3><ul>${items.map(row).join('')}</ul></div>`;\n})() }}",
         "options": {}
       },
-      "id": "6e6dbfba-33f0-4bc8-923b-b254b51042e5",
+      "id": "01036083-6bce-4f0e-9ac3-448dbf983130",
       "name": "Show Results",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -997,7 +998,7 @@
         3460,
         300
       ],
-      "webhookId": "28190497-9d63-4a4f-b150-253be94d7eb5"
+      "webhookId": "4becd7c6-8667-4854-8764-4ab9894491fb"
     }
   ],
   "connections": {

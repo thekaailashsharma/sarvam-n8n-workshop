@@ -47,9 +47,11 @@ Create them at http://localhost:5678/home/credentials, then pick them on the nod
 
 | Sample | What to expect |
 |---|---|
-| `samples/standup-english.wav` | 5 items: 2 bugs → GitHub, 1 feature → GitHub, 1 task, 1 decision, 1 follow-up → sheet |
+| `samples/standup-english.wav` | 5 items: bug + feature → GitHub, task, decision, follow-up → sheet |
 | `samples/standup-hindi.wav` | Hindi stand-up, same flow, `language_code = hi-IN` |
 | `samples/voice-note-bug-report.wav` | one bug → one GitHub issue |
+
+Clips must be under 30 seconds: Sarvam's real-time STT endpoint rejects longer audio (the Batch API handles those).
 
 Warm-up row on the canvas: three single-node demos (Hear / Think / Speak) that need only the Sarvam credential.
 

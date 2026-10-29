@@ -74,7 +74,7 @@ def X(i): return i * 300
 def stage(i, name, title, body, color=7, w=260, h=420, dy=-160):
     sticky(name, f"### {title}\n{body}", X(i) - 40, Y + dy, w, h, color)
 
-stage(0, "Sticky: Upload", "1 · Upload", "Any audio. Optional meeting title.")
+stage(0, "Sticky: Upload", "1 · Upload", "Any audio ≤ 30 s (real-time STT limit; Batch API for longer). Optional meeting title.")
 stage(1, "Sticky: Config", "2 · Config ✏️", "GitHub owner/repo and the sheet ID. Edit here only.", 5)
 stage(2, "Sticky: Hear", "3 · Hear", "Saaras v4, *translate* → English `transcript` + `language_code`.")
 stage(3, "Sticky: Guard", "4 · Guard", "Empty or tiny transcript → polite retry page. No garbage tickets.", h=480)
@@ -85,7 +85,7 @@ stage(7, "Sticky: Classify", "8 · Classify", "n8n **Text Classifier**: bug · f
 
 n0 = node("Upload Recording", "n8n-nodes-base.formTrigger", 2.5, {
     "formTitle": "Turn a meeting into tickets",
-    "formDescription": "Upload a recording or voice note in any Indian language.",
+    "formDescription": "Upload a recording or voice note in any Indian language (up to 30 seconds for the real-time API).",
     "formFields": {"values": [
         {"fieldLabel": "Recording", "fieldName": "recording", "fieldType": "file",
          "acceptFileTypes": ".wav,.mp3,.m4a,.ogg,.webm,.aac,.flac", "multipleFiles": False, "requiredField": True},
@@ -150,8 +150,8 @@ n7 = node("Classify", "@n8n/n8n-nodes-langchain.textClassifier", 1.1, {
     "options": {"fallback": "other", "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."}}, X(7), Y)
 
 LLM = node("Sarvam-105B", "@n8n/n8n-nodes-langchain.lmChatOpenAi", 1.2,
-           {"model": {"__rl": True, "mode": "id", "value": "sarvam-105b"}, "options": {"temperature": 0}}, X(5) - 60, Y + 220)
-sticky("Sticky: LLM", "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.", X(4) - 40, Y + 170, 560, 220, 6)
+           {"model": {"__rl": True, "mode": "id", "value": "sarvam-105b-conversations"}, "options": {"temperature": 0, "maxTokens": 2048}}, X(5) - 60, Y + 220)
+sticky("Sticky: LLM", "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.\n`sarvam-105b-conversations` answers directly; plain `sarvam-105b` thinks first and needs a much bigger token budget.", X(4) - 40, Y + 170, 560, 220, 6)
 
 # ── branches ──
 BX = X(8) + 60

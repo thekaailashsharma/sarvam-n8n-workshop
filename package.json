@@ -11,6 +11,7 @@
     "sync": "node scripts/sync-code-node.mjs",
     "samples": "bash scripts/make-samples.sh",
     "build": "python3 scripts/make-assets.py && python3 scripts/build-workflow.py",
-    "import": "python3 scripts/import.py"
+    "import": "python3 scripts/import.py",
+    "e2e": "python3 scripts/e2e.py"
   }
 }
