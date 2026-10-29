@@ -8,7 +8,7 @@
         "width": 820,
         "color": 7
       },
-      "id": "de8744e5-1095-4338-95e6-fb789f8ca77b",
+      "id": "feee1d3f-7368-4937-bec8-3aff0ec2af0b",
       "name": "Sticky: Hero",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -24,7 +24,7 @@
         "width": 1560,
         "color": 4
       },
-      "id": "96a01d61-0503-474e-b41c-8ee68a2e9c72",
+      "id": "4527c85c-ced4-4b6a-9da5-833912a22057",
       "name": "Sticky: Warm-up",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -40,7 +40,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "1548311b-43dc-4309-b2a0-51e7a1a2a98a",
+      "id": "e1ff1220-410a-4c1b-8260-98ec0f6f2635",
       "name": "Sticky: Warm-up STT",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -51,7 +51,7 @@
     },
     {
       "parameters": {},
-      "id": "d94520d6-aea4-4ba7-b0c0-0d3fddc65096",
+      "id": "f6fd0ddb-f2cd-426c-bc2d-6a0891f3e879",
       "name": "▶ Hear",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -65,7 +65,7 @@
         "fileSelector": "/samples/standup-hinglish.wav",
         "options": {}
       },
-      "id": "61bec2d6-e533-44a5-81fe-d6d86f78493a",
+      "id": "73d5d7d3-7457-4e87-bfc8-73fcffbc8f88",
       "name": "Try: Read sample",
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
@@ -85,7 +85,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "0aa6a930-1599-4396-8282-c2d27325bdaa",
+      "id": "51a3dc86-7ee8-4960-ad4d-3b4b366117dd",
       "name": "Try: Speech to Text",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -101,7 +101,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "7295d600-6057-4f2a-aff1-9ebe47206780",
+      "id": "aab8ce39-be8e-49d4-842a-e535d3363ff5",
       "name": "Sticky: Warm-up Chat",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -112,7 +112,7 @@
     },
     {
       "parameters": {},
-      "id": "ff959150-b5f0-4941-86ee-80d7333d2db5",
+      "id": "eabc002b-ba1c-4f98-8a67-03344b9af64c",
       "name": "▶ Think",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -134,7 +134,7 @@
           "reasoning_effort": "none"
         }
       },
-      "id": "302ccd64-455c-4232-932f-758a5987e7d8",
+      "id": "e35e2a73-c775-4ce9-9ebf-5866de77ec95",
       "name": "Try: Chat",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -150,7 +150,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "6121fab0-d05b-4383-ae94-cc01433a9efe",
+      "id": "936c22c2-8944-453e-9ae1-68e9a6a83ac6",
       "name": "Sticky: Warm-up TTS",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -161,7 +161,7 @@
     },
     {
       "parameters": {},
-      "id": "d1a21e35-d3cd-4a38-b57c-8016ff025ca3",
+      "id": "4cb280d0-35d8-4459-bd9a-606c341297af",
       "name": "▶ Speak",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -182,7 +182,7 @@
           "output_audio_codec": "mp3"
         }
       },
-      "id": "d22d6ea9-9fe3-4a03-8d4b-2dff406c1c59",
+      "id": "ef17a6ef-5062-468a-bf09-a5a3518e02de",
       "name": "Try: Text to Speech",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -193,12 +193,12 @@
     },
     {
       "parameters": {
-        "content": "## 🚀 The workflow · recording → classified tickets\n**Upload Recording** → *Test step* → drop in `samples/standup-hinglish.wav` → watch the classifier fan out → open the results page.",
+        "content": "## 🚀 The workflow · recording → classified, assigned tickets\n**Upload Recording** → *Test step* → drop in `samples/standup-hinglish.wav` → watch the classifier fan out → open the results page.",
         "height": 100,
-        "width": 2900,
+        "width": 3200,
         "color": 5
       },
-      "id": "1592b280-52f8-4b65-8127-ab259db01bd0",
+      "id": "1e19c218-2e98-4a66-b041-815bc71ba3af",
       "name": "Sticky: Pipeline",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -214,7 +214,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "e9f293bd-589a-49ab-bd8e-4a6c77c68c81",
+      "id": "053a1109-91b4-4e29-b872-384d0f3f940f",
       "name": "Sticky: Upload",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -225,12 +225,12 @@
     },
     {
       "parameters": {
-        "content": "### 2 · Config ✏️\nGitHub repo + sheet ID. The only node you edit.",
+        "content": "### 2 · Config ✏️\nGitHub repo, sheet ID and the **team directory** (spoken name → GitHub login).",
         "height": 420,
         "width": 260,
         "color": 5
       },
-      "id": "5d9f53d4-b139-4099-86ce-70a7d635cec1",
+      "id": "dba02ae7-1b57-43cd-bf32-e80ac75a9e9b",
       "name": "Sticky: Config",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -246,7 +246,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "e4d04a22-60f6-4f24-9680-e2d00b9cdccd",
+      "id": "9cede8b8-fc06-48e6-b3ee-3693cd1df348",
       "name": "Sticky: Hear",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -262,7 +262,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "c43fd9d7-b0b5-4606-a39a-8feda8fd7a0e",
+      "id": "3d7163d8-365e-424c-ac91-a054254529b6",
       "name": "Sticky: Guard",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -278,7 +278,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "2ba9db58-41fd-46c1-96f6-7b53032c4496",
+      "id": "55132a98-3f95-4a80-8049-90152e782f47",
       "name": "Sticky: Summarize",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -289,12 +289,12 @@
     },
     {
       "parameters": {
-        "content": "### 6 · Extract 🔍\nn8n Information Extractor + JSON schema → title, owner, priority, due for every item.",
+        "content": "### 6 · Extract 🔍\nn8n Information Extractor + JSON schema → problem, expected, impact, acceptance criteria, owner, priority, due.",
         "height": 420,
         "width": 260,
         "color": 6
       },
-      "id": "dd3ea2f2-3ac7-4a79-86cd-e79c4f002f8a",
+      "id": "3f219862-8cae-4d70-9230-1e58d4a381ce",
       "name": "Sticky: Extract",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -310,7 +310,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "adf4577a-b925-4ed2-aa59-3eae28f8ab2f",
+      "id": "558465ee-f23b-4cdd-9a17-2d99871d9c6a",
       "name": "Sticky: Split",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -321,17 +321,33 @@
     },
     {
       "parameters": {
-        "content": "### 8 · Classify 🏷️\nn8n Text Classifier: bug · feature · task · decision · follow-up. One output per class.",
-        "height": 620,
+        "content": "### 8 · Assign 👤\nLooks the spoken name up in the team directory → GitHub login. Unknown names stay unassigned but are kept in the body.",
+        "height": 420,
         "width": 260,
-        "color": 6
+        "color": 5
       },
-      "id": "78152f48-af47-4879-bf41-d176a4d190d7",
-      "name": "Sticky: Classify",
+      "id": "6c59271a-1466-4133-a0f9-e1bbffa6f003",
+      "name": "Sticky: Assign",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
         2060,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 9 · Classify 🏷️\nn8n Text Classifier: bug · feature · task · decision · follow-up. One output per class.",
+        "height": 620,
+        "width": 260,
+        "color": 6
+      },
+      "id": "d7f709ea-d252-41f1-b4cb-918f602dfaa8",
+      "name": "Sticky: Classify",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2360,
         -60
       ]
     },
@@ -360,7 +376,7 @@
           "buttonLabel": "Create tickets"
         }
       },
-      "id": "e38ed95d-abe1-40be-9e4a-e82e450e6cb9",
+      "id": "214ba7ba-db96-45c9-a2b3-37cd87d2ca29",
       "name": "Upload Recording",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.5,
@@ -368,28 +384,34 @@
         0,
         300
       ],
-      "webhookId": "c3ae019a-eb6b-4150-b261-a9d5087e101e"
+      "webhookId": "745d1ba3-2439-493c-927b-ed4dc26880ef"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "48cfadcb-c3c0-4549-8343-0a6317b7e79e",
+              "id": "ffd8624d-db56-468b-848d-7537a1a39bbf",
               "name": "githubOwner",
               "value": "thekaailashsharma",
               "type": "string"
             },
             {
-              "id": "55c3c9fb-c617-4836-8776-8725e85edaba",
+              "id": "8c5b48ac-df10-40ad-ac16-b01e7223130a",
               "name": "githubRepo",
               "value": "sarvam-n8n-workshop",
               "type": "string"
             },
             {
-              "id": "0e0ed862-7086-41a1-bb33-493224990ff6",
+              "id": "68054ac6-961c-413c-ad65-5c16a1a5cef2",
               "name": "sheetId",
               "value": "1VMB0tBNve0teNcL176g5Yvo9ElCld657Ab0aPY72uZA",
+              "type": "string"
+            },
+            {
+              "id": "53fa7da9-9881-490a-9027-cb76f1283367",
+              "name": "team",
+              "value": "{\"arjun\": \"thekaailashsharma\", \"neha\": \"thekaailashsharma\", \"kabir\": \"thekaailashsharma\", \"rahul\": \"thekaailashsharma\", \"priya\": \"thekaailashsharma\"}",
               "type": "string"
             }
           ]
@@ -397,7 +419,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "0c221ad6-3d84-45bb-b7b1-17733e873211",
+      "id": "1643c0e9-530b-48df-b4b5-aa250a4dc9f9",
       "name": "Config",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -417,7 +439,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "8a52b895-41fe-49a9-b65e-d88cba9ae37e",
+      "id": "425afe1f-a0cf-4fee-a94a-c425d6c51c79",
       "name": "Sarvam: Transcribe",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -437,7 +459,7 @@
           },
           "conditions": [
             {
-              "id": "c36a8f0a-3a8f-4b04-933b-34dc95f90d11",
+              "id": "287d4815-ca31-4df6-b0e7-c545c0aad484",
               "leftValue": "={{ ($json.transcript || '').trim().length }}",
               "rightValue": 20,
               "operator": {
@@ -450,7 +472,7 @@
         },
         "options": {}
       },
-      "id": "4bb1636e-5814-4751-aa54-6d55f513b070",
+      "id": "f2969017-eea2-475e-a147-d9420065acb0",
       "name": "Heard Anything?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
@@ -467,7 +489,7 @@
         "completionMessage": "The recording seems silent or too short. Please try again with a clearer file.",
         "options": {}
       },
-      "id": "b32518d0-c684-44ed-ab5b-7a41b2b7a9a5",
+      "id": "906df0a9-1fcd-4a93-a116-c716d20f5bc2",
       "name": "Couldn't Hear",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -475,7 +497,7 @@
         900,
         500
       ],
-      "webhookId": "f6e167fb-5aa8-4efd-9561-9326ff6a7709"
+      "webhookId": "9f6de895-3217-4815-95a8-a180f7869c52"
     },
     {
       "parameters": {
@@ -492,7 +514,7 @@
           }
         }
       },
-      "id": "5d2a4d89-b489-457d-aae3-6752940a50d9",
+      "id": "89012500-ec26-411b-b544-3ed7d2de73c1",
       "name": "Summarize Meeting",
       "type": "@n8n/n8n-nodes-langchain.chainSummarization",
       "typeVersion": 2.1,
@@ -505,12 +527,12 @@
       "parameters": {
         "text": "={{ $('Sarvam: Transcribe').item.json.transcript }}",
         "schemaType": "manual",
-        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"action_items\": {\n      \"type\": \"array\",\n      \"description\": \"Every concrete action item, decision or follow-up mentioned. One entry each.\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"title\": {\n            \"type\": \"string\",\n            \"description\": \"Imperative, max 80 chars, e.g. 'Fix checkout crash on Android UPI'\"\n          },\n          \"detail\": {\n            \"type\": \"string\",\n            \"description\": \"1-2 sentences of context from the transcript\"\n          },\n          \"owner\": {\n            \"type\": \"string\",\n            \"description\": \"Person named as responsible, else empty string\"\n          },\n          \"priority\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"P1\",\n              \"P2\",\n              \"P3\",\n              \"P4\"\n            ],\n            \"description\": \"P1 blocker/outage, P2 urgent, P3 normal, P4 nice-to-have\"\n          },\n          \"due\": {\n            \"type\": \"string\",\n            \"description\": \"Deadline as spoken, e.g. 'Wednesday', 'before launch', else empty\"\n          }\n        },\n        \"required\": [\n          \"title\",\n          \"detail\",\n          \"owner\",\n          \"priority\",\n          \"due\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"action_items\"\n  ]\n}",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"action_items\": {\n      \"type\": \"array\",\n      \"description\": \"Every concrete action item, decision or follow-up mentioned. One entry each.\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"title\": {\n            \"type\": \"string\",\n            \"description\": \"Imperative, max 80 chars, e.g. 'Fix checkout crash on Android UPI'\"\n          },\n          \"problem\": {\n            \"type\": \"string\",\n            \"description\": \"One line: what is broken, missing or needed, as stated in the meeting\"\n          },\n          \"expected\": {\n            \"type\": \"string\",\n            \"description\": \"One line: what 'done' looks like / the expected behaviour or outcome\"\n          },\n          \"impact\": {\n            \"type\": \"string\",\n            \"description\": \"One line: who is affected and why it matters (release, customers, revenue). Empty if not stated\"\n          },\n          \"acceptance_criteria\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            },\n            \"description\": \"2-3 short, testable checks that would close this item. Infer sensibly from the problem; do not invent facts\"\n          },\n          \"owner\": {\n            \"type\": \"string\",\n            \"description\": \"Person named as responsible, else empty string\"\n          },\n          \"priority\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"P1\",\n              \"P2\",\n              \"P3\",\n              \"P4\"\n            ],\n            \"description\": \"P1 blocker/outage, P2 urgent, P3 normal, P4 nice-to-have\"\n          },\n          \"due\": {\n            \"type\": \"string\",\n            \"description\": \"Deadline as spoken, e.g. 'Wednesday', 'before launch', else empty\"\n          }\n        },\n        \"required\": [\n          \"title\",\n          \"problem\",\n          \"expected\",\n          \"impact\",\n          \"acceptance_criteria\",\n          \"owner\",\n          \"priority\",\n          \"due\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"action_items\"\n  ]\n}",
         "options": {
-          "systemPromptTemplate": "You are an expert meeting scribe. Extract every action item, decision and follow-up from the transcript. Never invent names or dates. {format_instructions}"
+          "systemPromptTemplate": "You are a senior product manager writing tickets from a meeting transcript. Extract every action item, decision and follow-up. Write like a PM: crisp one-liners, concrete expected outcome, testable acceptance criteria. Never invent names, dates or numbers that were not said. {format_instructions}"
         }
       },
-      "id": "157f5bd6-2aa6-43ee-8f30-b66e32e6c4cb",
+      "id": "e29c73f8-ca8b-468e-835a-57cf0ec28ce7",
       "name": "Extract Action Items",
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.2,
@@ -525,7 +547,7 @@
         "include": "noOtherFields",
         "options": {}
       },
-      "id": "8ee5e924-1f4d-460e-8023-98dee1b1eec6",
+      "id": "360a5e0b-c258-4295-bc7f-f6418e000b11",
       "name": "One Item per Action",
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
@@ -536,28 +558,52 @@
     },
     {
       "parameters": {
-        "inputText": "={{ $json.title }} — {{ $json.detail }}",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5acd075-ba97-4d47-8f62-24ac06c267f0",
+              "name": "assignee",
+              "type": "string",
+              "value": "={{ (JSON.parse($('Config').item.json.team)[($json.owner || '').trim().toLowerCase().split(' ')[0]]) || '' }}"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "959f3f4d-3259-416b-94d0-726fff8e1d40",
+      "name": "Resolve Owner",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.title }} — {{ $json.problem }}",
         "categories": {
           "categories": [
             {
               "category": "bug",
-              "description": "Something is broken, crashing, failing or behaving wrongly. Needs a fix."
+              "description": "Something is broken, crashing, failing or behaving wrongly and needs a fix."
             },
             {
               "category": "feature",
-              "description": "New capability, enhancement or design work that a user would notice."
+              "description": "New user-facing capability, enhancement or design work that customers would notice."
             },
             {
               "category": "task",
-              "description": "Engineering or ops chore: config, setup, migration, runbook, documentation."
+              "description": "Internal engineering or ops work to do: security hardening, config, setup, migration, runbook, docs."
             },
             {
               "category": "decision",
-              "description": "A decision that was made and must be recorded, not work to do."
+              "description": "Something the team agreed or settled ('we decided', 'will be', 'policy is'): a rule, timing or policy to record. No build work."
             },
             {
               "category": "followup",
-              "description": "A reminder to chase, ask, check or get back to someone."
+              "description": "Chasing or waiting on someone: ask, remind, check back, get a reply or a document."
             }
           ]
         },
@@ -566,12 +612,12 @@
           "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."
         }
       },
-      "id": "4a801364-0e88-4503-a2be-961e3a8c17fa",
+      "id": "4c2c2570-b4e9-4d5e-864e-3b7c92b75f02",
       "name": "Classify",
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
       "position": [
-        2100,
+        2400,
         300
       ]
     },
@@ -587,7 +633,7 @@
           "maxTokens": 2048
         }
       },
-      "id": "58923148-7a6b-4b3f-a7d1-7015dea49111",
+      "id": "280282bc-1cca-4321-8e95-17c85963b980",
       "name": "Sarvam-105B",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
@@ -603,7 +649,7 @@
         "width": 560,
         "color": 6
       },
-      "id": "33ea3cc7-fa6c-47d4-a02b-04c881dca940",
+      "id": "4630c961-45e5-4684-9223-f986ac024176",
       "name": "Sticky: LLM",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -614,17 +660,17 @@
     },
     {
       "parameters": {
-        "content": "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) + sheet · **decision / follow-up** → sheet. Any class is one node away from Linear, Trello, Notion…",
+        "content": "### 10 · Branch out 🔀\n**bug / feature** → GitHub issues, labelled, assigned, with problem / expected / acceptance criteria · **task** → Jira (disabled, swap in yours) + sheet · **decision / follow-up** → sheet.",
         "height": 1100,
         "width": 600,
         "color": 1
       },
-      "id": "bc1b586f-e3ff-4710-b04a-799aa53bcfc0",
+      "id": "ed32fb94-8dee-463d-aaa1-3b21bf1492c5",
       "name": "Sticky: Branches",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2420,
+        2720,
         -180
       ]
     },
@@ -644,20 +690,20 @@
           "value": "={{ $('Config').item.json.githubRepo }}"
         },
         "title": "={{ $json.title }}",
-        "body": "={{ $json.detail }}\n\n| | |\n|---|---|\n| **Owner** | {{ $json.owner || '—' }} |\n| **Priority** | {{ $json.priority }} |\n| **Due** | {{ $json.due || '—' }} |\n| **Meeting** | {{ $('Upload Recording').item.json.meeting_title || 'untitled' }} |\n| **Spoken language** | {{ $('Sarvam: Transcribe').item.json.language_code }} |\n\n_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._",
+        "body": "={{ [\n  '## 🐛 Problem', $json.problem, '',\n  '## ✅ Expected behaviour', $json.expected, '',\n  ...($json.impact ? ['## 📌 Impact', $json.impact, ''] : []),\n  '## 🎯 Acceptance criteria', ...(($json.acceptance_criteria || []).map(c => '- [ ] ' + c)), '',\n  '---',\n  '**Owner** ' + ($json.owner || '—') + ($json.assignee ? ' (@' + $json.assignee + ')' : '') + ' · **Priority** ' + $json.priority + ' · **Due** ' + ($json.due || '—'),\n  '**Meeting** ' + ($('Upload Recording').item.json.meeting_title || 'untitled') + ' · **Spoken language** ' + $('Sarvam: Transcribe').item.json.language_code,\n  '', '_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._'\n].join('\\n') }}",
         "labels": [
           {
             "label": "bug"
           }
         ],
-        "assignees": []
+        "assignees": "={{ $json.assignee ? [{ assignee: $json.assignee }] : [] }}"
       },
-      "id": "952b4abf-4357-46b7-8aed-33437d573853",
+      "id": "7180780a-df77-4b5b-bdc0-b41ed6ccef24",
       "name": "GitHub: Bug Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        2460,
+        2760,
         -20
       ]
     },
@@ -677,20 +723,20 @@
           "value": "={{ $('Config').item.json.githubRepo }}"
         },
         "title": "={{ $json.title }}",
-        "body": "={{ $json.detail }}\n\n| | |\n|---|---|\n| **Owner** | {{ $json.owner || '—' }} |\n| **Priority** | {{ $json.priority }} |\n| **Due** | {{ $json.due || '—' }} |\n| **Meeting** | {{ $('Upload Recording').item.json.meeting_title || 'untitled' }} |\n| **Spoken language** | {{ $('Sarvam: Transcribe').item.json.language_code }} |\n\n_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._",
+        "body": "={{ [\n  '## ✨ What we need', $json.problem, '',\n  '## ✅ Expected outcome', $json.expected, '',\n  ...($json.impact ? ['## 📌 Impact', $json.impact, ''] : []),\n  '## 🎯 Acceptance criteria', ...(($json.acceptance_criteria || []).map(c => '- [ ] ' + c)), '',\n  '---',\n  '**Owner** ' + ($json.owner || '—') + ($json.assignee ? ' (@' + $json.assignee + ')' : '') + ' · **Priority** ' + $json.priority + ' · **Due** ' + ($json.due || '—'),\n  '**Meeting** ' + ($('Upload Recording').item.json.meeting_title || 'untitled') + ' · **Spoken language** ' + $('Sarvam: Transcribe').item.json.language_code,\n  '', '_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._'\n].join('\\n') }}",
         "labels": [
           {
             "label": "enhancement"
           }
         ],
-        "assignees": []
+        "assignees": "={{ $json.assignee ? [{ assignee: $json.assignee }] : [] }}"
       },
-      "id": "c83302a2-6bdf-4932-9d64-07ba4df95d6b",
+      "id": "d1a5c807-2de8-4e16-b467-befbe5364011",
       "name": "GitHub: Feature Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        2460,
+        2760,
         140
       ]
     },
@@ -710,15 +756,15 @@
         },
         "summary": "={{ $json.title }}",
         "additionalFields": {
-          "description": "={{ $json.detail }}"
+          "description": "={{ $json.problem }}\n\nExpected: {{ $json.expected }}"
         }
       },
-      "id": "04d1ce11-faae-4d66-9cde-b14b5e9230fd",
+      "id": "1b561655-b387-404e-bc63-3d6ddb30745a",
       "name": "Jira: Task (disabled)",
       "type": "n8n-nodes-base.jira",
       "typeVersion": 1,
       "position": [
-        2680,
+        2980,
         220
       ],
       "disabled": true
@@ -728,7 +774,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "db334e36-cdc3-46ab-ade9-4e87644ed1b1",
+              "id": "61882bd0-3dae-4639-83a2-1234a3f26db8",
               "name": "type",
               "value": "task",
               "type": "string"
@@ -738,12 +784,12 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "79abd1cd-7fd9-448d-8995-a041fc4dbc4f",
+      "id": "6533ca45-c275-4d5f-8e5a-697c20ca44e9",
       "name": "Tag: Task",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2460,
+        2760,
         300
       ]
     },
@@ -752,7 +798,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "413513b7-f925-406a-bd57-f67d1e35a8ac",
+              "id": "b551c896-1b7b-4f2d-a01b-ee50c023aa58",
               "name": "type",
               "value": "decision",
               "type": "string"
@@ -762,12 +808,12 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "7124daab-716f-46a0-b44b-eaf2700b05a5",
+      "id": "bbb51283-9eb6-479f-ab78-25234b2e590d",
       "name": "Tag: Decision",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2460,
+        2760,
         460
       ]
     },
@@ -776,7 +822,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "cec54fb2-7cdd-4631-b19d-185987ec82f5",
+              "id": "dba8be53-a20c-46b5-b99c-043c21b4f5fd",
               "name": "type",
               "value": "followup",
               "type": "string"
@@ -786,12 +832,12 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "ef10627f-e16e-4384-8643-5af6079c3fe1",
+      "id": "34f8f523-4e12-4338-8d33-219fb5dbc072",
       "name": "Tag: Follow-up",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2460,
+        2760,
         620
       ]
     },
@@ -800,7 +846,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "3588f4b2-1702-452a-9905-c20a10ae5b72",
+              "id": "6e1586e2-8097-488b-a2e6-cd3cdd0cbb07",
               "name": "type",
               "value": "other",
               "type": "string"
@@ -810,28 +856,28 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "28d327f2-93b2-406d-a8fa-fa5e778c1c3f",
+      "id": "313b4f7e-66b1-45fb-a96a-08ec5bf087a9",
       "name": "Tag: Other",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2460,
+        2760,
         780
       ]
     },
     {
       "parameters": {
-        "content": "### 10 · Record + report 📋\nBranches merge → one sheet row per item, GitHub link included → the uploader sees the summary and every ticket.",
+        "content": "### 11 · Record + report 📋\nBranches merge → one sheet row per item, GitHub link included → the uploader sees the summary and every ticket.",
         "height": 420,
         "width": 1020,
         "color": 4
       },
-      "id": "63761d8c-177c-4c3b-9d30-69207d925c72",
+      "id": "cb137327-485a-40ef-a544-6bf32e70e959",
       "name": "Sticky: Record",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2740,
+        3040,
         140
       ]
     },
@@ -840,12 +886,12 @@
         "mode": "append",
         "numberInputs": 6
       },
-      "id": "2b0e2270-a060-45ce-a089-8b645013289c",
+      "id": "4c0f8cb5-3adb-4442-bc62-0dae2924705d",
       "name": "Merge Branches",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        2780,
+        3080,
         300
       ]
     },
@@ -869,8 +915,10 @@
             "Meeting": "={{ $('Upload Recording').item.json.meeting_title || 'untitled' }}",
             "Type": "={{ $json.type ?? ($json.labels && $json.labels[0] ? $json.labels[0].name : '') }}",
             "Title": "={{ $('One Item per Action').item.json.title }}",
-            "Detail": "={{ $('One Item per Action').item.json.detail }}",
+            "Problem": "={{ $('One Item per Action').item.json.problem }}",
+            "Expected": "={{ $('One Item per Action').item.json.expected }}",
             "Owner": "={{ $('One Item per Action').item.json.owner }}",
+            "Assignee": "={{ $('One Item per Action').item.json.assignee ? '@' + $('One Item per Action').item.json.assignee : '' }}",
             "Priority": "={{ $('One Item per Action').item.json.priority }}",
             "Due": "={{ $('One Item per Action').item.json.due }}",
             "Link": "={{ $json.html_url ?? '' }}",
@@ -915,8 +963,17 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Detail",
-              "displayName": "Detail",
+              "id": "Problem",
+              "displayName": "Problem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expected",
+              "displayName": "Expected",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -926,6 +983,15 @@
             {
               "id": "Owner",
               "displayName": "Owner",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Assignee",
+              "displayName": "Assignee",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -974,12 +1040,12 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "c3e1103c-839e-4fc4-8e19-b3becde4c010",
+      "id": "c8545fe4-e3a1-424b-85ac-32298e764779",
       "name": "Log to Sheet",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        2980,
+        3280,
         300
       ]
     },
@@ -988,12 +1054,12 @@
         "aggregate": "aggregateAllItemData",
         "options": {}
       },
-      "id": "d9c1c403-65f4-4498-977f-d272cc4de841",
+      "id": "7075ec33-c136-49c0-9e74-bef35728c3e6",
       "name": "Collect Results",
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        3220,
+        3520,
         300
       ]
     },
@@ -1001,18 +1067,18 @@
       "parameters": {
         "operation": "completion",
         "respondWith": "showText",
-        "responseText": "={{ (() => {\n  const items = $json.data || [];\n  const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();\n  const lang = $('Sarvam: Transcribe').first().json.language_code;\n  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href=\"${i.Link}\" target=\"_blank\">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}</small></li>`;\n  return `<div style=\"font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5\">\n    <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>\n    <p style=\"color:#666\">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>\n    <h3>Summary</h3><pre style=\"white-space:pre-wrap;background:#f6f6f8;padding:12px;border-radius:8px\">${summary}</pre>\n    <h3>Tickets</h3><ul>${items.map(row).join('')}</ul></div>`;\n})() }}",
+        "responseText": "={{ (() => {\n  const items = $json.data || [];\n  const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();\n  const lang = $('Sarvam: Transcribe').first().json.language_code;\n  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href=\"${i.Link}\" target=\"_blank\">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}${i.Assignee ? ' ' + i.Assignee : ''}</small></li>`;\n  return `<div style=\"font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5\">\n    <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>\n    <p style=\"color:#666\">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>\n    <h3>Summary</h3><pre style=\"white-space:pre-wrap;background:#f6f6f8;padding:12px;border-radius:8px\">${summary}</pre>\n    <h3>Tickets</h3><ul>${items.map(row).join('')}</ul></div>`;\n})() }}",
         "options": {}
       },
-      "id": "7aa2bfbe-3f19-427f-9bbc-715d6535f80d",
+      "id": "408e0775-c9da-4321-bd32-5c12c277207d",
       "name": "Show Results",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
       "position": [
-        3460,
+        3760,
         300
       ],
-      "webhookId": "f7efd7bf-bc07-4439-a863-55a2f129ad06"
+      "webhookId": "01ce7d80-569e-4c91-8203-7ebe13799c69"
     }
   ],
   "connections": {
@@ -1266,6 +1332,17 @@
       ]
     },
     "One Item per Action": {
+      "main": [
+        [
+          {
+            "node": "Resolve Owner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resolve Owner": {
       "main": [
         [
           {

@@ -16,6 +16,8 @@ ICON = {k: f"{ASSET_BASE}/{k}.png" for k in ("hear", "think", "speak")}
 GITHUB_OWNER = os.environ.get("GITHUB_OWNER", "thekaailashsharma")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "sarvam-n8n-workshop")
 SHEET_ID = os.environ.get("SHEET_ID", "1VMB0tBNve0teNcL176g5Yvo9ElCld657Ab0aPY72uZA")
+# Spoken first name → GitHub login. Demo maps everyone to the repo owner (the only collaborator); edit for your team.
+TEAM = {"arjun": GITHUB_OWNER, "neha": GITHUB_OWNER, "kabir": GITHUB_OWNER, "rahul": GITHUB_OWNER, "priya": GITHUB_OWNER}
 
 def nid(): return str(uuid.uuid4())
 
@@ -67,7 +69,7 @@ c2 = sarvam("Try: Text to Speech", {"resource": "speech", "operation": "textToSp
 link(c1, c2)
 
 # ═══════════════════════════ MAIN PIPELINE ═══════════════════════════
-sticky("Sticky: Pipeline", "## 🚀 The workflow · recording → classified tickets\n**Upload Recording** → *Test step* → drop in `samples/standup-hinglish.wav` → watch the classifier fan out → open the results page.", -20, -120, 2900, 100, 5)
+sticky("Sticky: Pipeline", "## 🚀 The workflow · recording → classified, assigned tickets\n**Upload Recording** → *Test step* → drop in `samples/standup-hinglish.wav` → watch the classifier fan out → open the results page.", -20, -120, 3200, 100, 5)
 
 Y = 300
 def X(i): return i * 300
@@ -75,13 +77,14 @@ def stage(i, name, title, body, color=7, w=260, h=420, dy=-160):
     sticky(name, f"### {title}\n{body}", X(i) - 40, Y + dy, w, h, color)
 
 stage(0, "Sticky: Upload", "1 · Upload", "Any audio, ≤ 30 s. Optional meeting title.")
-stage(1, "Sticky: Config", "2 · Config ✏️", "GitHub repo + sheet ID. The only node you edit.", 5)
+stage(1, "Sticky: Config", "2 · Config ✏️", "GitHub repo, sheet ID and the **team directory** (spoken name → GitHub login).", 5)
 stage(2, "Sticky: Hear", "3 · Hear 🎧", "Saaras v4 translates any language to English and tells you which one it heard.")
 stage(3, "Sticky: Guard", "4 · Guard 🛡️", "Silence or noise → a polite retry page, never a garbage ticket.", h=480)
 stage(4, "Sticky: Summarize", "5 · Summarize 📝", "n8n Summarization Chain → 4-6 bullets for people who missed the meeting.", 6)
-stage(5, "Sticky: Extract", "6 · Extract 🔍", "n8n Information Extractor + JSON schema → title, owner, priority, due for every item.", 6)
+stage(5, "Sticky: Extract", "6 · Extract 🔍", "n8n Information Extractor + JSON schema → problem, expected, impact, acceptance criteria, owner, priority, due.", 6)
 stage(6, "Sticky: Split", "7 · Split ✂️", "One item per action. From here on, each row is a ticket.")
-stage(7, "Sticky: Classify", "8 · Classify 🏷️", "n8n Text Classifier: bug · feature · task · decision · follow-up. One output per class.", 6, h=620, dy=-360)
+stage(7, "Sticky: Assign", "8 · Assign 👤", "Looks the spoken name up in the team directory → GitHub login. Unknown names stay unassigned but are kept in the body.", 5)
+stage(8, "Sticky: Classify", "9 · Classify 🏷️", "n8n Text Classifier: bug · feature · task · decision · follow-up. One output per class.", 6, h=620, dy=-360)
 
 n0 = node("Upload Recording", "n8n-nodes-base.formTrigger", 2.5, {
     "formTitle": "Turn a meeting into tickets",
@@ -98,6 +101,7 @@ n1 = node("Config", "n8n-nodes-base.set", 3.4, {"assignments": {"assignments": [
     {"id": nid(), "name": "githubOwner", "value": GITHUB_OWNER, "type": "string"},
     {"id": nid(), "name": "githubRepo", "value": GITHUB_REPO, "type": "string"},
     {"id": nid(), "name": "sheetId", "value": SHEET_ID, "type": "string"},
+    {"id": nid(), "name": "team", "value": json.dumps(TEAM), "type": "string"},
 ]}, "includeOtherFields": True, "options": {}}, X(1), Y)
 
 n2 = sarvam("Sarvam: Transcribe", {"resource": "speech", "operation": "speechToText", "binaryPropertyName": "recording",
@@ -128,50 +132,67 @@ n5 = node("Extract Action Items", "@n8n/n8n-nodes-langchain.informationExtractor
         "properties": {"action_items": {"type": "array", "description": "Every concrete action item, decision or follow-up mentioned. One entry each.",
             "items": {"type": "object", "properties": {
                 "title": {"type": "string", "description": "Imperative, max 80 chars, e.g. 'Fix checkout crash on Android UPI'"},
-                "detail": {"type": "string", "description": "1-2 sentences of context from the transcript"},
+                "problem": {"type": "string", "description": "One line: what is broken, missing or needed, as stated in the meeting"},
+                "expected": {"type": "string", "description": "One line: what 'done' looks like / the expected behaviour or outcome"},
+                "impact": {"type": "string", "description": "One line: who is affected and why it matters (release, customers, revenue). Empty if not stated"},
+                "acceptance_criteria": {"type": "array", "items": {"type": "string"}, "description": "2-3 short, testable checks that would close this item. Infer sensibly from the problem; do not invent facts"},
                 "owner": {"type": "string", "description": "Person named as responsible, else empty string"},
                 "priority": {"type": "string", "enum": ["P1", "P2", "P3", "P4"], "description": "P1 blocker/outage, P2 urgent, P3 normal, P4 nice-to-have"},
                 "due": {"type": "string", "description": "Deadline as spoken, e.g. 'Wednesday', 'before launch', else empty"}},
-                "required": ["title", "detail", "owner", "priority", "due"]}}},
+                "required": ["title", "problem", "expected", "impact", "acceptance_criteria", "owner", "priority", "due"]}}},
         "required": ["action_items"]}, indent=2),
-    "options": {"systemPromptTemplate": "You are an expert meeting scribe. Extract every action item, decision and follow-up from the transcript. Never invent names or dates. {format_instructions}"},
+    "options": {"systemPromptTemplate": "You are a senior product manager writing tickets from a meeting transcript. Extract every action item, decision and follow-up. Write like a PM: crisp one-liners, concrete expected outcome, testable acceptance criteria. Never invent names, dates or numbers that were not said. {format_instructions}"},
 }, X(5), Y)
 
 n6 = node("One Item per Action", "n8n-nodes-base.splitOut", 1, {"fieldToSplitOut": "output.action_items", "include": "noOtherFields", "options": {}}, X(6), Y)
 
-CATS = [("bug", "Something is broken, crashing, failing or behaving wrongly. Needs a fix."),
-        ("feature", "New capability, enhancement or design work that a user would notice."),
-        ("task", "Engineering or ops chore: config, setup, migration, runbook, documentation."),
-        ("decision", "A decision that was made and must be recorded, not work to do."),
-        ("followup", "A reminder to chase, ask, check or get back to someone.")]
+CATS = [("bug", "Something is broken, crashing, failing or behaving wrongly and needs a fix."),
+        ("feature", "New user-facing capability, enhancement or design work that customers would notice."),
+        ("task", "Internal engineering or ops work to do: security hardening, config, setup, migration, runbook, docs."),
+        ("decision", "Something the team agreed or settled ('we decided', 'will be', 'policy is'): a rule, timing or policy to record. No build work."),
+        ("followup", "Chasing or waiting on someone: ask, remind, check back, get a reply or a document.")]
+n6b = node("Resolve Owner", "n8n-nodes-base.set", 3.4, {"assignments": {"assignments": [
+    {"id": nid(), "name": "assignee", "type": "string",
+     "value": "={{ (JSON.parse($('Config').item.json.team)[($json.owner || '').trim().toLowerCase().split(' ')[0]]) || '' }}"}]},
+    "includeOtherFields": True, "options": {}}, X(7), Y)
 n7 = node("Classify", "@n8n/n8n-nodes-langchain.textClassifier", 1.1, {
-    "inputText": "={{ $json.title }} — {{ $json.detail }}",
+    "inputText": "={{ $json.title }} — {{ $json.problem }}",
     "categories": {"categories": [{"category": c, "description": d} for c, d in CATS]},
-    "options": {"fallback": "other", "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."}}, X(7), Y)
+    "options": {"fallback": "other", "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."}}, X(8), Y)
 
 LLM = node("Sarvam-105B", "@n8n/n8n-nodes-langchain.lmChatOpenAi", 1.2,
            {"model": {"__rl": True, "mode": "id", "value": "sarvam-105b-conversations"}, "options": {"temperature": 0, "maxTokens": 2048}}, X(5) - 60, Y + 220)
 sticky("Sticky: LLM", "### 🧠 Sarvam-105B is the brain\nOne OpenAI Chat Model node, Base URL `https://api.sarvam.ai/v1`, powers all three n8n AI nodes. `-conversations` answers directly; plain `sarvam-105b` thinks first and needs a bigger token budget.", X(4) - 40, Y + 170, 560, 220, 6)
 
 # ── branches ──
-BX = X(8) + 60
+BX = X(9) + 60
 BYS = {"bug": Y - 320, "feature": Y - 160, "task": Y, "decision": Y + 160, "followup": Y + 320, "other": Y + 480}
-sticky("Sticky: Branches", "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) + sheet · **decision / follow-up** → sheet. Any class is one node away from Linear, Trello, Notion…", BX - 40, Y - 480, 600, 1100, 1)
+sticky("Sticky: Branches", "### 10 · Branch out 🔀\n**bug / feature** → GitHub issues, labelled, assigned, with problem / expected / acceptance criteria · **task** → Jira (disabled, swap in yours) + sheet · **decision / follow-up** → sheet.", BX - 40, Y - 480, 600, 1100, 1)
 
-def gh_issue(name, label, y):
+def gh_issue(name, label, y, kind):
     return node(name, "n8n-nodes-base.github", 1.1, {
         "authentication": "accessToken", "resource": "issue", "operation": "create",
         "owner": {"__rl": True, "mode": "name", "value": "={{ $('Config').item.json.githubOwner }}"},
         "repository": {"__rl": True, "mode": "name", "value": "={{ $('Config').item.json.githubRepo }}"},
         "title": "={{ $json.title }}",
-        "body": ("={{ $json.detail }}\n\n| | |\n|---|---|\n| **Owner** | {{ $json.owner || '—' }} |\n| **Priority** | {{ $json.priority }} |\n| **Due** | {{ $json.due || '—' }} |\n| **Meeting** | {{ $('Upload Recording').item.json.meeting_title || 'untitled' }} |\n| **Spoken language** | {{ $('Sarvam: Transcribe').item.json.language_code }} |\n\n_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._"),
-        "labels": [{"label": label}], "assignees": []}, BX, y)
+        "body": ("={{ [\n"
+                 f"  '## {kind[0]}', $json.problem, '',\n"
+                 f"  '## {kind[1]}', $json.expected, '',\n"
+                 "  ...($json.impact ? ['## 📌 Impact', $json.impact, ''] : []),\n"
+                 "  '## 🎯 Acceptance criteria', ...(($json.acceptance_criteria || []).map(c => '- [ ] ' + c)), '',\n"
+                 "  '---',\n"
+                 "  '**Owner** ' + ($json.owner || '—') + ($json.assignee ? ' (@' + $json.assignee + ')' : '') + ' · **Priority** ' + $json.priority + ' · **Due** ' + ($json.due || '—'),\n"
+                 "  '**Meeting** ' + ($('Upload Recording').item.json.meeting_title || 'untitled') + ' · **Spoken language** ' + $('Sarvam: Transcribe').item.json.language_code,\n"
+                 "  '', '_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._'\n"
+                 "].join('\\n') }}"),
+        "labels": [{"label": label}],
+        "assignees": "={{ $json.assignee ? [{ assignee: $json.assignee }] : [] }}"}, BX, y)
 
-g1 = gh_issue("GitHub: Bug Issue", "bug", BYS["bug"])
-g2 = gh_issue("GitHub: Feature Issue", "enhancement", BYS["feature"])
+g1 = gh_issue("GitHub: Bug Issue", "bug", BYS["bug"], ("🐛 Problem", "✅ Expected behaviour"))
+g2 = gh_issue("GitHub: Feature Issue", "enhancement", BYS["feature"], ("✨ What we need", "✅ Expected outcome"))
 j1 = node("Jira: Task (disabled)", "n8n-nodes-base.jira", 1, {"resource": "issue", "operation": "create",
           "project": {"__rl": True, "mode": "list", "value": ""}, "issueType": {"__rl": True, "mode": "list", "value": ""},
-          "summary": "={{ $json.title }}", "additionalFields": {"description": "={{ $json.detail }}"}}, BX + 220, BYS["task"] - 80, disabled=True)
+          "summary": "={{ $json.title }}", "additionalFields": {"description": "={{ $json.problem }}\n\nExpected: {{ $json.expected }}"}}, BX + 220, BYS["task"] - 80, disabled=True)
 t1 = tag("Tag: Task", "task", BX, BYS["task"])
 t2 = tag("Tag: Decision", "decision", BX, BYS["decision"])
 t3 = tag("Tag: Follow-up", "followup", BX, BYS["followup"])
@@ -183,11 +204,12 @@ link(n7, j1, out=2)
 
 # ── record + finish ──
 RX = BX + 520
-sticky("Sticky: Record", "### 10 · Record + report 📋\nBranches merge → one sheet row per item, GitHub link included → the uploader sees the summary and every ticket.", RX - 240, Y - 160, 1020, 420, 4)
+sticky("Sticky: Record", "### 11 · Record + report 📋\nBranches merge → one sheet row per item, GitHub link included → the uploader sees the summary and every ticket.", RX - 240, Y - 160, 1020, 420, 4)
 ITEM = "$('One Item per Action').item.json"
 COLS = [("Created", "={{ $now.toISO() }}"), ("Meeting", "={{ $('Upload Recording').item.json.meeting_title || 'untitled' }}"),
         ("Type", "={{ $json.type ?? ($json.labels && $json.labels[0] ? $json.labels[0].name : '') }}"),
-        ("Title", f"={{{{ {ITEM}.title }}}}"), ("Detail", f"={{{{ {ITEM}.detail }}}}"), ("Owner", f"={{{{ {ITEM}.owner }}}}"),
+        ("Title", f"={{{{ {ITEM}.title }}}}"), ("Problem", f"={{{{ {ITEM}.problem }}}}"), ("Expected", f"={{{{ {ITEM}.expected }}}}"),
+        ("Owner", f"={{{{ {ITEM}.owner }}}}"), ("Assignee", f"={{{{ {ITEM}.assignee ? '@' + {ITEM}.assignee : '' }}}}"),
         ("Priority", f"={{{{ {ITEM}.priority }}}}"), ("Due", f"={{{{ {ITEM}.due }}}}"), ("Link", "={{ $json.html_url ?? '' }}"), ("Status", "Open")]
 m1 = node("Merge Branches", "n8n-nodes-base.merge", 3.2, {"mode": "append", "numberInputs": 6}, RX - 200, Y)
 s1 = node("Log to Sheet", "n8n-nodes-base.googleSheets", 4.7, {
@@ -208,7 +230,7 @@ RESULT_HTML = """={{ (() => {
   const items = $json.data || [];
   const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();
   const lang = $('Sarvam: Transcribe').first().json.language_code;
-  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href="${i.Link}" target="_blank">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}</small></li>`;
+  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href="${i.Link}" target="_blank">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}${i.Assignee ? ' ' + i.Assignee : ''}</small></li>`;
   return `<div style="font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5">
     <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>
     <p style="color:#666">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>
@@ -220,7 +242,7 @@ s3 = node("Show Results", "n8n-nodes-base.form", 2.5, {"operation": "completion"
 link(s2, s3)
 
 # ── main chain wiring ──
-for a, b in [(n0, n1), (n1, n2), (n2, n3), (n4, n5), (n5, n6), (n6, n7)]: link(a, b)
+for a, b in [(n0, n1), (n1, n2), (n2, n3), (n4, n5), (n5, n6), (n6, n6b), (n6b, n7)]: link(a, b)
 link(n3, n4, out=0); link(n3, n3b, out=1)
 for consumer in (n4, n5, n7): link(LLM, consumer, kind="ai_languageModel")
 

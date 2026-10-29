@@ -22,7 +22,7 @@ test('every connection points at an existing node', () => {
 
 test('main chain: upload → config → transcribe → guard → summarize → extract → split → classify', () => {
   const chain = ['Upload Recording', 'Config', 'Sarvam: Transcribe', 'Heard Anything?', 'Summarize Meeting',
-    'Extract Action Items', 'One Item per Action', 'Classify'];
+    'Extract Action Items', 'One Item per Action', 'Resolve Owner', 'Classify'];
   for (let i = 0; i < chain.length - 1; i += 1) {
     assert.ok(next(chain[i]).includes(chain[i + 1]), `${chain[i]} should connect to ${chain[i + 1]}`);
   }
@@ -66,11 +66,25 @@ test('Sarvam nodes use valid community-node parameters', () => {
   assert.equal(byName['Upload Recording'].parameters.formFields.values[0].fieldName, 'recording');
 });
 
-test('extractor schema is valid JSON with the action_items array', () => {
+test('extractor schema is valid JSON with PM-grade action items', () => {
   const schema = JSON.parse(byName['Extract Action Items'].parameters.inputSchema);
   assert.equal(schema.properties.action_items.type, 'array');
+  for (const f of ['title', 'problem', 'expected', 'impact', 'acceptance_criteria', 'owner', 'priority', 'due']) {
+    assert.ok(schema.properties.action_items.items.properties[f], `schema field ${f}`);
+  }
   assert.deepEqual(schema.properties.action_items.items.properties.priority.enum, ['P1', 'P2', 'P3', 'P4']);
   assert.equal(byName['One Item per Action'].parameters.fieldToSplitOut, 'output.action_items');
+});
+
+test('GitHub issues are assigned from the team directory and carry a PM-style body', () => {
+  const team = JSON.parse(byName['Config'].parameters.assignments.assignments.find((a) => a.name === 'team').value);
+  assert.ok(Object.keys(team).length >= 3);
+  assert.match(byName['Resolve Owner'].parameters.assignments.assignments[0].value, /team/);
+  for (const n of ['GitHub: Bug Issue', 'GitHub: Feature Issue']) {
+    assert.match(byName[n].parameters.assignees, /assignee: \$json\.assignee/);
+    assert.match(byName[n].parameters.body, /Acceptance criteria/);
+    assert.match(byName[n].parameters.body, /\$json\.expected/);
+  }
 });
 
 test('no credential ids or secrets are baked into the export', () => {

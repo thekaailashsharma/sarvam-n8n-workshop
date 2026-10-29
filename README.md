@@ -41,7 +41,9 @@ Create them at http://localhost:5678/home/credentials, then pick them on the nod
 
 ## 5. Config node
 
-`githubOwner`, `githubRepo`, `sheetId`. Defaults point at this repo and the workshop sheet.
+`githubOwner`, `githubRepo`, `sheetId`, and `team`: a JSON map from spoken first name to GitHub login, used to assign issues (`{"arjun": "octocat", ...}`). Names not in the map stay unassigned but are kept in the issue body. Defaults point at this repo and the workshop sheet.
+
+Each GitHub issue is written PM-style: problem, expected behaviour, impact, acceptance-criteria checklist, owner, priority, due, meeting and spoken language.
 
 ## 6. Try it
 
