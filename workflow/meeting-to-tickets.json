@@ -1,0 +1,1301 @@
+{
+  "name": "Meeting → Tickets (Sarvam AI)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# 🎙️ Meeting → Tickets\n![pipeline](/static/workshop/hero.gif)\n**Sarvam AI × n8n** · talk in any Indian language → every action item becomes a **GitHub issue** or a **sheet row**, classified automatically.\nCredentials: **Sarvam AI** (STT) · **OpenAI-compatible** (Sarvam-105B) · **GitHub** · **Google Sheets**.\n",
+        "height": 440,
+        "width": 820,
+        "color": 7
+      },
+      "id": "c0e53039-1184-4c05-883d-29c86977862f",
+      "name": "Sticky: Hero",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🧪 Warm-up · one node at a time\nOnly the Sarvam credential needed. Hit **Test step** on each.",
+        "height": 100,
+        "width": 1560,
+        "color": 4
+      },
+      "id": "72a7c1c1-d88d-4fc0-9926-7d0534c1c796",
+      "name": "Sticky: Warm-up",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        880,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🎧 Hear · Saaras v4\n![hear](/static/workshop/hear.png)\nHindi stand-up recording → English transcript + detected language.",
+        "height": 340,
+        "width": 500,
+        "color": 7
+      },
+      "id": "df369580-a223-4ccd-8ca7-114259234f5c",
+      "name": "Sticky: Warm-up STT",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        880,
+        -500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "cb45c97c-8993-468f-b752-20eddcf3d929",
+      "name": "▶ Hear",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        920,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "fileSelector": "/samples/standup-hindi.wav",
+        "options": {}
+      },
+      "id": "cf81c4bd-d38c-4af9-8c29-9d47439395c3",
+      "name": "Try: Read sample",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "speech",
+        "operation": "speechToText",
+        "binaryPropertyName": "data",
+        "sttMode": "translate",
+        "sttModel": "saaras:v4",
+        "speechToTextOptions": {
+          "language_code": "unknown"
+        }
+      },
+      "id": "da6b5c0c-727a-4b05-98dc-c022fd5719bc",
+      "name": "Try: Speech to Text",
+      "type": "n8n-nodes-sarvam.sarvam",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧠 Think · Sarvam-105B\n![think](/static/workshop/think.png)\nAsk in Hinglish, answer in English. Reasoning off → fast.",
+        "height": 340,
+        "width": 500,
+        "color": 7
+      },
+      "id": "b461346a-72a1-4dbf-a720-b661e5277be5",
+      "name": "Sticky: Warm-up Chat",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        -500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "479c6838-9e2d-4a87-ab4f-5eb179b68ea0",
+      "name": "▶ Think",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "complete",
+        "chatModel": "sarvam-105b",
+        "userMessage": "Is meeting note se action items nikaalo, English mein, bullet list: 'Arjun login bug aaj fix karega, Neha next sprint mein Hindi invoice design karegi.'",
+        "systemMessage": "You are a concise assistant.",
+        "chatOptions": {
+          "temperature": 0,
+          "max_tokens": 512,
+          "reasoning_effort": "none"
+        }
+      },
+      "id": "6c89b548-1b32-4dea-ad96-ccd103e4c341",
+      "name": "Try: Chat",
+      "type": "n8n-nodes-sarvam.sarvam",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🔊 Speak · Bulbul v4-flash\n![speak](/static/workshop/speak.png)\nHindi text → MP3 you can play in the output panel.",
+        "height": 340,
+        "width": 500,
+        "color": 7
+      },
+      "id": "83c7d6a2-8abd-4ac2-b465-fa31fe228f4e",
+      "name": "Sticky: Warm-up TTS",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        -500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "6304690a-c303-48c5-854c-579b79c8c710",
+      "name": "▶ Speak",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "speech",
+        "operation": "textToSpeech",
+        "ttsModel": "bulbul:v4-flash",
+        "ttsSpeakerV4": "aarti_hi_customer",
+        "ttsTargetLanguage": "hi-IN",
+        "text": "नमस्ते! मीटिंग के सभी एक्शन आइटम गिटहब पर बना दिए गए हैं।",
+        "textToSpeechOptions": {
+          "output_audio_codec": "mp3"
+        }
+      },
+      "id": "6c014900-84a9-4ce0-91d7-10a1f3b468c0",
+      "name": "Try: Text to Speech",
+      "type": "n8n-nodes-sarvam.sarvam",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🚀 The workflow · recording → classified tickets\nOpen **Upload Recording** → *Test step* → upload `samples/standup-english.wav`. Watch the classifier fan out.",
+        "height": 100,
+        "width": 2900,
+        "color": 5
+      },
+      "id": "0e2aa3b6-1f2b-49e7-894f-512b5fc2ee29",
+      "name": "Sticky: Pipeline",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 1 · Upload\nAny audio. Optional meeting title.",
+        "height": 420,
+        "width": 260,
+        "color": 7
+      },
+      "id": "07f0ed76-dc79-4b80-9e03-df90e51b3368",
+      "name": "Sticky: Upload",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 2 · Config ✏️\nGitHub owner/repo and the sheet ID. Edit here only.",
+        "height": 420,
+        "width": 260,
+        "color": 5
+      },
+      "id": "9b79ab74-b409-4879-b2ff-22bc716801c5",
+      "name": "Sticky: Config",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 3 · Hear\nSaaras v4, *translate* → English `transcript` + `language_code`.",
+        "height": 420,
+        "width": 260,
+        "color": 7
+      },
+      "id": "57b858cb-e66f-4899-a778-b1f1656807fa",
+      "name": "Sticky: Hear",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        560,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 4 · Guard\nEmpty or tiny transcript → polite retry page. No garbage tickets.",
+        "height": 480,
+        "width": 260,
+        "color": 7
+      },
+      "id": "a3493e4e-9c58-4191-b280-a5f0346709b0",
+      "name": "Sticky: Guard",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        860,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 5 · Summarize\nn8n **Summarization Chain** on Sarvam-105B → 4-6 bullets.",
+        "height": 420,
+        "width": 260,
+        "color": 6
+      },
+      "id": "1f326642-2223-4aca-8259-1addda2b4e28",
+      "name": "Sticky: Summarize",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 6 · Extract\nn8n **Information Extractor** with a JSON schema → list of action items.",
+        "height": 420,
+        "width": 260,
+        "color": 6
+      },
+      "id": "0e8aa092-f6ad-4cf0-aceb-a4f7223e50e9",
+      "name": "Sticky: Extract",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 7 · Split\nOne item per action. From here on, every row is a ticket.",
+        "height": 420,
+        "width": 260,
+        "color": 7
+      },
+      "id": "268ca05f-4000-4462-a31b-1dea0010d552",
+      "name": "Sticky: Split",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 8 · Classify\nn8n **Text Classifier**: bug · feature · task · decision · follow-up. Each class is a branch — add Linear, Trello, Notion…",
+        "height": 620,
+        "width": 260,
+        "color": 6
+      },
+      "id": "df18ae55-5096-4099-8653-25d3f0f52148",
+      "name": "Sticky: Classify",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2060,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "formTitle": "Turn a meeting into tickets",
+        "formDescription": "Upload a recording or voice note in any Indian language.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Recording",
+              "fieldName": "recording",
+              "fieldType": "file",
+              "acceptFileTypes": ".wav,.mp3,.m4a,.ogg,.webm,.aac,.flac",
+              "multipleFiles": false,
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Meeting title",
+              "fieldName": "meeting_title",
+              "placeholder": "e.g. Payments stand-up"
+            }
+          ]
+        },
+        "options": {
+          "buttonLabel": "Create tickets"
+        }
+      },
+      "id": "e5912a2d-99a6-4cb1-9ec4-cf32045cf788",
+      "name": "Upload Recording",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "504d9d93-9fd9-4f89-83f9-87699dec6e7e"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "56adb3e9-13a7-4d25-aa9b-e490c65ea558",
+              "name": "githubOwner",
+              "value": "thekaailashsharma",
+              "type": "string"
+            },
+            {
+              "id": "c0eb9b50-a0b9-4c23-9770-a64c24b7ecf6",
+              "name": "githubRepo",
+              "value": "sarvam-n8n-workshop",
+              "type": "string"
+            },
+            {
+              "id": "4619a45a-4cc5-4f62-8a6b-c134c819b837",
+              "name": "sheetId",
+              "value": "1HPR_t2damLpDcFWbpqroAWEptLP_hsNk3cdkCr4oIjo",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "031d6b82-1383-4e36-8972-03f706211b3f",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "speech",
+        "operation": "speechToText",
+        "binaryPropertyName": "recording",
+        "sttMode": "translate",
+        "sttModel": "saaras:v4",
+        "speechToTextOptions": {
+          "language_code": "unknown"
+        }
+      },
+      "id": "c0c88568-a9fb-4b57-b562-fa5df4fae537",
+      "name": "Sarvam: Transcribe",
+      "type": "n8n-nodes-sarvam.sarvam",
+      "typeVersion": 1,
+      "position": [
+        600,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "73fc414a-bb0a-4282-8f05-6d3634da8178",
+              "leftValue": "={{ ($json.transcript || '').trim().length }}",
+              "rightValue": 20,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9ea4e768-7d00-4895-9417-4a1b38f18003",
+      "name": "Heard Anything?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "respondWith": "text",
+        "completionTitle": "We couldn't hear anything 🎧",
+        "completionMessage": "The recording seems silent or too short. Please try again with a clearer file.",
+        "options": {}
+      },
+      "id": "4116d01b-d62f-4374-a49c-f27bb39709b5",
+      "name": "Couldn't Hear",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.5,
+      "position": [
+        900,
+        500
+      ],
+      "webhookId": "313c3289-3866-4fe6-9efd-97be9314b33f"
+    },
+    {
+      "parameters": {
+        "operationMode": "nodeInputJson",
+        "chunkingMode": "simple",
+        "chunkSize": 60000,
+        "chunkOverlap": 0,
+        "options": {
+          "summarizationMethodAndPrompts": {
+            "values": {
+              "summarizationMethod": "stuff",
+              "prompt": "Write a crisp meeting summary for people who were not there.\n4-6 short bullets: what was discussed, what was decided, blockers.\nPlain text bullets starting with '- '. No preamble.\n\nTranscript:\n\"{text}\"\n\nSUMMARY:"
+            }
+          }
+        }
+      },
+      "id": "8826ee79-5d8b-4a9f-b4ac-23ac7a764a72",
+      "name": "Summarize Meeting",
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "text": "={{ $('Sarvam: Transcribe').item.json.transcript }}",
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"action_items\": {\n      \"type\": \"array\",\n      \"description\": \"Every concrete action item, decision or follow-up mentioned. One entry each.\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"title\": {\n            \"type\": \"string\",\n            \"description\": \"Imperative, max 80 chars, e.g. 'Fix checkout crash on Android UPI'\"\n          },\n          \"detail\": {\n            \"type\": \"string\",\n            \"description\": \"1-2 sentences of context from the transcript\"\n          },\n          \"owner\": {\n            \"type\": \"string\",\n            \"description\": \"Person named as responsible, else empty string\"\n          },\n          \"priority\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"P1\",\n              \"P2\",\n              \"P3\",\n              \"P4\"\n            ],\n            \"description\": \"P1 blocker/outage, P2 urgent, P3 normal, P4 nice-to-have\"\n          },\n          \"due\": {\n            \"type\": \"string\",\n            \"description\": \"Deadline as spoken, e.g. 'Wednesday', 'before launch', else empty\"\n          }\n        },\n        \"required\": [\n          \"title\",\n          \"detail\",\n          \"owner\",\n          \"priority\",\n          \"due\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"action_items\"\n  ]\n}",
+        "options": {
+          "systemPromptTemplate": "You are an expert meeting scribe. Extract every action item, decision and follow-up from the transcript. Never invent names or dates. {format_instructions}"
+        }
+      },
+      "id": "6c36f0c9-1a98-40ac-aa49-b6a9f0355b3d",
+      "name": "Extract Action Items",
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1.2,
+      "position": [
+        1500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.action_items",
+        "include": "noOtherFields",
+        "options": {}
+      },
+      "id": "b6e1c4fc-1860-417b-bf17-56be5b62fd3c",
+      "name": "One Item per Action",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.title }} — {{ $json.detail }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "bug",
+              "description": "Something is broken, crashing, failing or behaving wrongly. Needs a fix."
+            },
+            {
+              "category": "feature",
+              "description": "New capability, enhancement or design work that a user would notice."
+            },
+            {
+              "category": "task",
+              "description": "Engineering or ops chore: config, setup, migration, runbook, documentation."
+            },
+            {
+              "category": "decision",
+              "description": "A decision that was made and must be recorded, not work to do."
+            },
+            {
+              "category": "followup",
+              "description": "A reminder to chase, ask, check or get back to someone."
+            }
+          ]
+        },
+        "options": {
+          "fallback": "other",
+          "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."
+        }
+      },
+      "id": "aa4354a5-2e54-45d3-ba3f-e76076e75234",
+      "name": "Classify",
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        2100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "sarvam-105b"
+        },
+        "options": {
+          "temperature": 0
+        }
+      },
+      "id": "37c91607-6948-4536-a665-6d79686e100b",
+      "name": "Sarvam-105B",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.",
+        "height": 220,
+        "width": 560,
+        "color": 6
+      },
+      "id": "5071a383-574a-44fb-b66c-31a444d63ee4",
+      "name": "Sticky: LLM",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        470
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) and the sheet · **decision / follow-up / other** → sheet. Every class is one node away from any tool.",
+        "height": 1100,
+        "width": 600,
+        "color": 1
+      },
+      "id": "7367a045-1f9c-4c38-acd5-b819560f1d16",
+      "name": "Sticky: Branches",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2420,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "issue",
+        "operation": "create",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Config').item.json.githubOwner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Config').item.json.githubRepo }}"
+        },
+        "title": "={{ $json.title }}",
+        "body": "={{ $json.detail }}\n\n| | |\n|---|---|\n| **Owner** | {{ $json.owner || '—' }} |\n| **Priority** | {{ $json.priority }} |\n| **Due** | {{ $json.due || '—' }} |\n| **Meeting** | {{ $('Upload Recording').item.json.meeting_title || 'untitled' }} |\n| **Spoken language** | {{ $('Sarvam: Transcribe').item.json.language_code }} |\n\n_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._",
+        "labels": [
+          {
+            "label": "bug"
+          }
+        ],
+        "assignees": []
+      },
+      "id": "512c0bed-c397-4bd0-b78e-81df282a489c",
+      "name": "GitHub: Bug Issue",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2460,
+        -20
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "issue",
+        "operation": "create",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Config').item.json.githubOwner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Config').item.json.githubRepo }}"
+        },
+        "title": "={{ $json.title }}",
+        "body": "={{ $json.detail }}\n\n| | |\n|---|---|\n| **Owner** | {{ $json.owner || '—' }} |\n| **Priority** | {{ $json.priority }} |\n| **Due** | {{ $json.due || '—' }} |\n| **Meeting** | {{ $('Upload Recording').item.json.meeting_title || 'untitled' }} |\n| **Spoken language** | {{ $('Sarvam: Transcribe').item.json.language_code }} |\n\n_Created from a voice recording by Sarvam Saaras v4 + Sarvam-105B via n8n._",
+        "labels": [
+          {
+            "label": "enhancement"
+          }
+        ],
+        "assignees": []
+      },
+      "id": "e965551a-6b6c-4a3e-a276-afc32262049e",
+      "name": "GitHub: Feature Issue",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2460,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "issue",
+        "operation": "create",
+        "project": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "issueType": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "summary": "={{ $json.title }}",
+        "additionalFields": {
+          "description": "={{ $json.detail }}"
+        }
+      },
+      "id": "9e5d4855-0e7d-4403-98b0-0661221503d9",
+      "name": "Jira: Task (disabled)",
+      "type": "n8n-nodes-base.jira",
+      "typeVersion": 1,
+      "position": [
+        2680,
+        220
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "852718c3-152b-4d2d-b6ce-58e9587d809b",
+              "name": "type",
+              "value": "task",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "0406730b-3f8a-44cc-a1f7-bbf5299124a3",
+      "name": "Tag: Task",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e578486-9cd5-4260-8053-55f1fc60235f",
+              "name": "type",
+              "value": "decision",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "423f8625-decf-4187-8cb1-9706bdc45e11",
+      "name": "Tag: Decision",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c6493352-9ffc-4925-93f9-e57373f04369",
+              "name": "type",
+              "value": "followup",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "f5716c82-f5d1-46a1-9fdd-8a3c55c7d041",
+      "name": "Tag: Follow-up",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2460,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1e2ed63-142e-4780-a0b6-50b63a04aceb",
+              "name": "type",
+              "value": "other",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "8b8a0956-2227-4418-ba44-d99fb1bef9e1",
+      "name": "Tag: Other",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2460,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 10 · Record + report 📋\nEvery item → one sheet row (with the GitHub link when there is one) → the uploader sees the summary and the created tickets.",
+        "height": 420,
+        "width": 820,
+        "color": 4
+      },
+      "id": "703bb444-25f4-4227-9fed-3f5a859c3e63",
+      "name": "Sticky: Record",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2940,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('Config').item.json.sheetId }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Created": "={{ $now.toISO() }}",
+            "Meeting": "={{ $('Upload Recording').item.json.meeting_title || 'untitled' }}",
+            "Type": "={{ $json.type ?? ($json.labels && $json.labels[0] ? $json.labels[0].name : '') }}",
+            "Title": "={{ $('One Item per Action').item.json.title }}",
+            "Detail": "={{ $('One Item per Action').item.json.detail }}",
+            "Owner": "={{ $('One Item per Action').item.json.owner }}",
+            "Priority": "={{ $('One Item per Action').item.json.priority }}",
+            "Due": "={{ $('One Item per Action').item.json.due }}",
+            "Link": "={{ $json.html_url ?? '' }}",
+            "Status": "Open"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Meeting",
+              "displayName": "Meeting",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Detail",
+              "displayName": "Detail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Owner",
+              "displayName": "Owner",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Priority",
+              "displayName": "Priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Due",
+              "displayName": "Due",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link",
+              "displayName": "Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "08c512b2-01d7-47cc-be20-9fd3a422184e",
+      "name": "Log to Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2980,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "4f123b80-6431-4d09-bdcc-a6a8fa980319",
+      "name": "Collect Results",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        3220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "respondWith": "showText",
+        "responseText": "={{ (() => {\n  const items = $json.data || [];\n  const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();\n  const lang = $('Sarvam: Transcribe').first().json.language_code;\n  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href=\"${i.Link}\" target=\"_blank\">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}</small></li>`;\n  return `<div style=\"font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5\">\n    <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>\n    <p style=\"color:#666\">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>\n    <h3>Summary</h3><pre style=\"white-space:pre-wrap;background:#f6f6f8;padding:12px;border-radius:8px\">${summary}</pre>\n    <h3>Tickets</h3><ul>${items.map(row).join('')}</ul></div>`;\n})() }}",
+        "options": {}
+      },
+      "id": "6e6dbfba-33f0-4bc8-923b-b254b51042e5",
+      "name": "Show Results",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.5,
+      "position": [
+        3460,
+        300
+      ],
+      "webhookId": "28190497-9d63-4a4f-b150-253be94d7eb5"
+    }
+  ],
+  "connections": {
+    "▶ Hear": {
+      "main": [
+        [
+          {
+            "node": "Try: Read sample",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Try: Read sample": {
+      "main": [
+        [
+          {
+            "node": "Try: Speech to Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "▶ Think": {
+      "main": [
+        [
+          {
+            "node": "Try: Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "▶ Speak": {
+      "main": [
+        [
+          {
+            "node": "Try: Text to Speech",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify": {
+      "main": [
+        [
+          {
+            "node": "GitHub: Bug Issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GitHub: Feature Issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tag: Task",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Jira: Task (disabled)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tag: Decision",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tag: Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tag: Other",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub: Bug Issue": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub: Feature Issue": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tag: Task": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tag: Decision": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tag: Follow-up": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tag: Other": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log to Sheet": {
+      "main": [
+        [
+          {
+            "node": "Collect Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Results": {
+      "main": [
+        [
+          {
+            "node": "Show Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Recording": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Sarvam: Transcribe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sarvam: Transcribe": {
+      "main": [
+        [
+          {
+            "node": "Heard Anything?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize Meeting": {
+      "main": [
+        [
+          {
+            "node": "Extract Action Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Action Items": {
+      "main": [
+        [
+          {
+            "node": "One Item per Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One Item per Action": {
+      "main": [
+        [
+          {
+            "node": "Classify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Heard Anything?": {
+      "main": [
+        [
+          {
+            "node": "Summarize Meeting",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Couldn't Hear",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sarvam-105B": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarize Meeting",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Extract Action Items",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Classify",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

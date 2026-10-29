@@ -1,0 +1,21 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: sarvam-n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=Asia/Kolkata
+      - TZ=Asia/Kolkata
+      - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./samples:/samples:ro
+      # sticky-note images: n8n only renders https:// or /static/ image URLs
+      - ./assets:/usr/local/lib/node_modules/n8n/node_modules/n8n-editor-ui/dist/static/workshop:ro
+    restart: unless-stopped
+volumes:
+  n8n_data:

@@ -1,0 +1,16 @@
+{
+  "name": "sarvam-n8n-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Meeting recording in any Indian language \u2192 classified GitHub issues + Google Sheet rows, with Sarvam AI + n8n",
+  "scripts": {
+    "start": "docker compose up -d && echo n8n \u2192 http://localhost:5678",
+    "stop": "docker compose down",
+    "logs": "docker compose logs -f n8n",
+    "test": "node --test tests/*.test.js",
+    "sync": "node scripts/sync-code-node.mjs",
+    "samples": "bash scripts/make-samples.sh",
+    "build": "python3 scripts/make-assets.py && python3 scripts/build-workflow.py",
+    "import": "docker cp workflow/meeting-to-tickets.json sarvam-n8n:/tmp/wf.json && docker exec sarvam-n8n n8n import:workflow --input=/tmp/wf.json"
+  }
+}
