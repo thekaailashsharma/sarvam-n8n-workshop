@@ -1,79 +1,79 @@
 {
-  "name": "ABCs of n8n — Nodes (visual, runnable)",
+  "name": "ABCs of n8n",
   "nodes": [
     {
       "parameters": {
-        "content": "# 📘 ABCs of n8n · every node, one canvas\nBased on Abhay's node reference (abhay.co/go) · remixed for the **Sarvam × n8n** workshop. Three chains are **runnable**: hit *Execute* on a Manual Trigger and watch data flow. Hover any node for its one-liner.",
-        "height": 120,
+        "content": "![hero](/static/workshop/abc/hero.gif)\nBased on Abhay's node reference · abhay.co/go · remixed for the Sarvam × n8n workshop",
+        "height": 330,
         "width": 2560,
         "color": 7
       },
-      "id": "b6fbbf65-6caf-41ac-95f1-450fc49205de",
-      "name": "Header",
+      "id": "30c55659-e8e9-4234-bb28-e21a200a8e3e",
+      "name": "Hero",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        -200
+        0,
+        -420
       ]
     },
     {
       "parameters": {
-        "content": "![triggers](/static/workshop/abc/triggers.gif)\nNothing runs until one of these fires. All of them hand off to **Sample Data** below.",
-        "height": 130,
+        "content": "![triggers](/static/workshop/abc/triggers.gif)",
+        "height": 220,
         "width": 2560,
         "color": 7
       },
-      "id": "ed3a2fa8-6396-47ca-88e1-71301861226f",
-      "name": "Section: triggers",
+      "id": "2c0db12d-68a0-4d16-b2d9-c5bc96487fa7",
+      "name": "Section triggers",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        -40
+        0,
+        0
       ]
     },
     {
       "parameters": {
-        "content": "![bolt](/static/workshop/abc/bolt.png)\n**Manual Trigger** · click Execute",
-        "height": 250,
-        "width": 240,
+        "content": "![bolt](/static/workshop/abc/bolt.png)\n### Manual\nyou press Execute",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "9eae8a39-24e3-4e72-bb0b-2aee64bf21d9",
-      "name": "Card: Manual Trigger",
+      "id": "f5a1e4b4-ed45-475b-8041-289b1a03e400",
+      "name": "Card: Manual",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        110
+        0,
+        280
       ]
     },
     {
       "parameters": {},
-      "id": "8a7f03e1-233a-4aee-a784-415fd94ec78b",
+      "id": "1eac4c43-d4fe-464e-ad84-7f66d8bd6091",
       "name": "Manual Trigger",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -220,
-        230
+        100,
+        470
       ]
     },
     {
       "parameters": {
-        "content": "![clock](/static/workshop/abc/clock.png)\n**Schedule** · every hour",
-        "height": 250,
-        "width": 240,
+        "content": "![clock](/static/workshop/abc/clock.png)\n### Schedule\nevery hour, cron, daily",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "2b1d2709-ae6d-4d1e-bb55-4858d1bd5a28",
+      "id": "eb51ee8d-67a8-4c3d-97bb-692f0ce410a5",
       "name": "Card: Schedule",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        110
+        360,
+        280
       ]
     },
     {
@@ -86,29 +86,29 @@
           ]
         }
       },
-      "id": "8de08b8f-d97a-4a83-a668-10260364181f",
+      "id": "14eb03d8-f1cb-4add-abfb-30de672f1deb",
       "name": "Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        50,
-        230
+        460,
+        470
       ]
     },
     {
       "parameters": {
-        "content": "![hook](/static/workshop/abc/hook.png)\n**Webhook** · POST /abc-n8n",
-        "height": 250,
-        "width": 240,
+        "content": "![hook](/static/workshop/abc/hook.png)\n### Webhook\nan app calls your URL",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "42d43e92-384f-4bbc-bec1-1b9a8fec2134",
+      "id": "ee8b666b-4f7f-49fa-b163-5c5d7987118e",
       "name": "Card: Webhook",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        110
+        720,
+        280
       ]
     },
     {
@@ -118,30 +118,30 @@
         "responseMode": "lastNode",
         "options": {}
       },
-      "id": "8561780e-d1df-4470-8673-05fd44b20d0f",
+      "id": "a61298c4-18ae-4b41-8f60-06b5cecf8097",
       "name": "Webhook Trigger",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        320,
-        230
+        820,
+        470
       ],
-      "webhookId": "8a9b9d4e-bd77-4a2a-a3ab-2b057cada746"
+      "webhookId": "e0050e88-1103-4e6a-8f61-7be3a204fd08"
     },
     {
       "parameters": {
-        "content": "![form](/static/workshop/abc/form.png)\n**Form** · hosted web form",
-        "height": 250,
-        "width": 240,
+        "content": "![form](/static/workshop/abc/form.png)\n### Form\na hosted web form",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "1bf3554f-92ff-4bb7-8499-6737ec6bb59b",
+      "id": "0a559d47-801e-499e-9980-d7cc06f18d8e",
       "name": "Card: Form",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        570,
-        110
+        1080,
+        280
       ]
     },
     {
@@ -162,30 +162,30 @@
         },
         "options": {}
       },
-      "id": "1f9d8a6e-a41e-415e-b23b-0d35dc2dfdeb",
+      "id": "48b3439c-e858-454c-bbda-2b686c7c2e84",
       "name": "Form Trigger",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.5,
       "position": [
-        590,
-        230
+        1180,
+        470
       ],
-      "webhookId": "f8765895-3f57-4fc1-8488-acdcb82575c7"
+      "webhookId": "b18b5005-0f4c-4bb3-ac61-ab7a62737b14"
     },
     {
       "parameters": {
-        "content": "![mail](/static/workshop/abc/mail.png)\n**Gmail Trigger** · new email arrives",
-        "height": 250,
-        "width": 240,
+        "content": "![mail](/static/workshop/abc/mail.png)\n### Gmail\na new email arrives",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "376ff04c-843c-41a8-ade4-6644a49d16d3",
-      "name": "Card: Gmail Trigger",
+      "id": "bd1ec6f5-5a94-4e37-b5c2-876c7e1609d5",
+      "name": "Card: Gmail",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        840,
-        110
+        1440,
+        280
       ]
     },
     {
@@ -199,58 +199,58 @@
         },
         "filters": {}
       },
-      "id": "3ef92709-19bc-41ec-bb3e-e19bc7ca8bfc",
+      "id": "3a6dfd48-ca4d-4e08-a6bc-3e145f839c56",
       "name": "Gmail Trigger",
       "type": "n8n-nodes-base.gmailTrigger",
       "typeVersion": 1.3,
       "position": [
-        860,
-        230
+        1540,
+        470
       ]
     },
     {
       "parameters": {
-        "content": "![loop](/static/workshop/abc/loop.png)\n**Sub-workflow** · called by another flow",
-        "height": 250,
-        "width": 240,
+        "content": "![loop](/static/workshop/abc/loop.png)\n### Sub-workflow\nanother workflow calls this",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "90a25597-e4c1-4a8a-b2d9-5f9ac2869b27",
+      "id": "0ef0e02f-c628-40cc-885d-5ab1351a6128",
       "name": "Card: Sub-workflow",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1110,
-        110
+        1800,
+        280
       ]
     },
     {
       "parameters": {
         "inputSource": "passthrough"
       },
-      "id": "4e8870aa-c321-49a3-b55a-e1a5c6853917",
+      "id": "cf21fde2-4e95-4c6d-8533-07a118309719",
       "name": "Called by Another Workflow",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        1130,
-        230
+        1900,
+        470
       ]
     },
     {
       "parameters": {
-        "content": "![chat-trigger](/static/workshop/abc/chat-trigger.png)\n**Chat Trigger** · public chat UI",
-        "height": 250,
-        "width": 240,
+        "content": "![chat-trigger](/static/workshop/abc/chat-trigger.png)\n### Chat\na message in the chat UI",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "7dd66644-93cf-49ed-897c-1d90d018b29e",
-      "name": "Card: Chat Trigger",
+      "id": "440c640a-ec16-413c-9a9f-b78128aa32b4",
+      "name": "Card: Chat",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1380,
-        110
+        2160,
+        280
       ]
     },
     {
@@ -258,75 +258,102 @@
         "public": true,
         "options": {}
       },
-      "id": "09f53d99-e085-4de7-9569-a02e71e9858d",
-      "name": "Chat Trigger",
+      "id": "48098c65-068e-44cd-89e9-dcdcfab4c8d7",
+      "name": "Chat Trigger (ref)",
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.3,
       "position": [
-        1400,
-        230
+        2260,
+        470
       ],
-      "webhookId": "ca895038-815c-4370-a21c-d6797c99c353"
+      "webhookId": "d8bd8f54-11fc-4961-ab68-bb359e248793"
     },
     {
       "parameters": {
-        "content": "![code](/static/workshop/abc/code.png)\n**Sample Data** · 4 people with scores and tags. Every runnable chain starts here.",
-        "height": 160,
-        "width": 520,
-        "color": 1
+        "content": "![data](/static/workshop/abc/data.gif)",
+        "height": 220,
+        "width": 2560,
+        "color": 7
       },
-      "id": "df0f4ed1-da79-42cc-843a-c2527b4d399f",
-      "name": "Card: Sample Data",
+      "id": "12f6e65a-e09e-47e8-85db-cdb4224eca49",
+      "name": "Section data",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        390
+        0,
+        770
       ]
     },
     {
       "parameters": {
-        "jsCode": "return [\n  { json: { name: 'Priya',  score: 92, isActive: true,  tags: ['n8n', 'ai'] } },\n  { json: { name: 'Arjun',  score: 67, isActive: true,  tags: ['automation'] } },\n  { json: { name: 'Neha',   score: 48, isActive: false, tags: ['design', 'ux'] } },\n  { json: { name: 'Kabir',  score: 88, isActive: true,  tags: ['backend'] } },\n];"
+        "content": "![bolt](/static/workshop/abc/bolt.png)\n### ▶ Run\npress Execute",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "cee06dfc-9b33-40eb-883a-a1f6aba5fb50",
-      "name": "Sample Data",
+      "id": "1d8e2b3b-5dad-4b51-9645-41cb667353c1",
+      "name": "Card: ▶ Run",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1050
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2adff4e5-8cb5-4823-9277-43b12365f008",
+      "name": "Run data",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "content": "![code-data](/static/workshop/abc/code-data.png)\n### Sample data\n4 people, scores, tags",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "85b636c6-d17e-4b10-982f-5da10356e513",
+      "name": "Card: Sample data",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        360,
+        1050
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  { json: { name: 'Priya', score: 92, isActive: true,  tags: ['n8n', 'ai'] } },\n  { json: { name: 'Arjun', score: 67, isActive: true,  tags: ['automation'] } },\n  { json: { name: 'Neha',  score: 48, isActive: false, tags: ['design', 'ux'] } },\n  { json: { name: 'Kabir', score: 88, isActive: true,  tags: ['backend'] } },\n];"
+      },
+      "id": "092d36bf-3148-423a-9ec2-7cf05f95bd0d",
+      "name": "Sample data (data)",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -220,
-        440
+        460,
+        1240
       ]
     },
     {
       "parameters": {
-        "content": "![data](/static/workshop/abc/data.gif)\nReshape, filter, split and collect. **Runnable:** Execute → open each node to see items change.",
-        "height": 130,
-        "width": 2560,
-        "color": 5
+        "content": "![pencil](/static/workshop/abc/pencil.png)\n### Edit Fields\nadd greeting + level",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "4a181cb2-1683-4308-9db3-8e9400399f72",
-      "name": "Section: data",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -240,
-        590
-      ]
-    },
-    {
-      "parameters": {
-        "content": "![pencil](/static/workshop/abc/pencil.png)\n**Edit Fields** · add greeting + level",
-        "height": 250,
-        "width": 240,
-        "color": 5
-      },
-      "id": "ab8d72d1-01e5-4a1a-8bd3-34b3e4e97890",
+      "id": "6ca21b0d-b5a0-4279-982f-3583e33a772d",
       "name": "Card: Edit Fields",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        740
+        720,
+        1050
       ]
     },
     {
@@ -334,13 +361,13 @@
         "assignments": {
           "assignments": [
             {
-              "id": "b06355ae-4f8d-46f6-bea5-2bf80d899e3b",
+              "id": "cdbbd469-cb4c-402b-a558-1960e42475b3",
               "name": "greeting",
               "value": "=Hello {{ $json.name }}!",
               "type": "string"
             },
             {
-              "id": "fa742b26-f421-4945-88ad-52bd7fbf96e4",
+              "id": "ec2cac54-73ce-4c4c-a61c-78add33f9919",
               "name": "level",
               "value": "={{ $json.score >= 80 ? 'gold' : 'silver' }}",
               "type": "string"
@@ -350,29 +377,29 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "b0865282-e535-41fc-8c31-9b53ed37fc1c",
+      "id": "da79f382-299a-4e57-9cab-40705ca58cf5",
       "name": "Edit Fields",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -220,
-        860
+        820,
+        1240
       ]
     },
     {
       "parameters": {
-        "content": "![cal](/static/workshop/abc/cal.png)\n**Date & Time** · stamp today",
-        "height": 250,
-        "width": 240,
-        "color": 5
+        "content": "![cal](/static/workshop/abc/cal.png)\n### Date & Time\nstamp today's date",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "f6cee924-f949-462e-a90b-a4493ed48984",
+      "id": "da7d1ada-0e27-4084-9875-68328b764e51",
       "name": "Card: Date & Time",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        740
+        1080,
+        1050
       ]
     },
     {
@@ -385,29 +412,29 @@
           "includeInputFields": true
         }
       },
-      "id": "9214836f-9b09-4333-827d-f692da342656",
+      "id": "8638cf50-f3b1-4106-9c40-386f89e3d15c",
       "name": "Date & Time",
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        50,
-        860
+        1180,
+        1240
       ]
     },
     {
       "parameters": {
-        "content": "![funnel](/static/workshop/abc/funnel.png)\n**Filter** · keep score ≥ 50",
-        "height": 250,
-        "width": 240,
-        "color": 5
+        "content": "![funnel](/static/workshop/abc/funnel.png)\n### Filter\nkeep score ≥ 50",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "85a792c0-9e61-4516-85f3-02effd51aebc",
+      "id": "337baf55-9731-4575-b882-b09a7bdd4788",
       "name": "Card: Filter",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        740
+        1440,
+        1050
       ]
     },
     {
@@ -421,7 +448,7 @@
           },
           "conditions": [
             {
-              "id": "284dc0a5-a87b-4583-b58e-6199272857dd",
+              "id": "c23affe0-6ae4-45f4-aca9-d9dd507c141c",
               "leftValue": "={{ $json.score }}",
               "rightValue": 50,
               "operator": {
@@ -434,29 +461,29 @@
         },
         "options": {}
       },
-      "id": "651f75c3-c57e-486f-82e8-20a8c2badb61",
+      "id": "c6cc0194-8dfa-4356-b53d-e7ebc604d336",
       "name": "Filter",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        320,
-        860
+        1540,
+        1240
       ]
     },
     {
       "parameters": {
-        "content": "![scissors](/static/workshop/abc/scissors.png)\n**Split Out** · one item per tag",
-        "height": 250,
-        "width": 240,
-        "color": 5
+        "content": "![scissors](/static/workshop/abc/scissors.png)\n### Split Out\none item per tag",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "b9541a10-b8d5-4f09-aefc-8b5ea6ed28bb",
+      "id": "bac4cd9d-2edb-433f-8ad1-032a985d8f87",
       "name": "Card: Split Out",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        570,
-        740
+        1800,
+        1050
       ]
     },
     {
@@ -465,29 +492,29 @@
         "include": "allOtherFields",
         "options": {}
       },
-      "id": "6c3b56d6-8e38-42e8-9407-5d021f26699a",
+      "id": "8f40347d-3f77-4a71-894f-6bf2b4cac21a",
       "name": "Split Out",
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        590,
-        860
+        1900,
+        1240
       ]
     },
     {
       "parameters": {
-        "content": "![box](/static/workshop/abc/box.png)\n**Aggregate** · collect tags back",
-        "height": 250,
-        "width": 240,
-        "color": 5
+        "content": "![box](/static/workshop/abc/box.png)\n### Aggregate\ncollect tags back",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "b49dd7eb-8521-4575-91f9-1d97808b5acd",
+      "id": "87b0cb34-d394-4b4a-b29c-64bc680e00d2",
       "name": "Card: Aggregate",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        840,
-        740
+        2160,
+        1050
       ]
     },
     {
@@ -502,45 +529,101 @@
         },
         "options": {}
       },
-      "id": "6ca37a51-3f54-4df2-8a95-d9ca1cf3ea98",
+      "id": "d74528b2-7b9f-4de8-b12f-d135cdc6b930",
       "name": "Aggregate",
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        860,
-        860
+        2260,
+        1240
       ]
     },
     {
       "parameters": {
-        "content": "![flow](/static/workshop/abc/flow.gif)\nBranch, merge, loop. **Runnable:** Priya and Kabir go the TRUE way, the rest FALSE, then 2 per batch.",
-        "height": 130,
+        "content": "![flow](/static/workshop/abc/flow.gif)",
+        "height": 220,
         "width": 2560,
-        "color": 6
+        "color": 7
       },
-      "id": "8c90f2e9-73de-476a-9586-eb0459e7c33b",
-      "name": "Section: flow",
+      "id": "8928c644-0ab4-4485-9b26-853479887d2b",
+      "name": "Section flow",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        1050
+        0,
+        1540
       ]
     },
     {
       "parameters": {
-        "content": "![fork](/static/workshop/abc/fork.png)\n**IF** · score ≥ 80 ?",
-        "height": 250,
-        "width": 240,
-        "color": 6
+        "content": "![bolt](/static/workshop/abc/bolt.png)\n### ▶ Run\npress Execute",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "8eaf6bdc-d449-4c94-a182-eb12621c223f",
+      "id": "784a4536-ecd7-46df-8a32-331fa875aa2f",
+      "name": "Card: ▶ Run 2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1820
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "6838471e-b343-458a-98d7-dd9699d0efeb",
+      "name": "Run flow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        2010
+      ]
+    },
+    {
+      "parameters": {
+        "content": "![code-flow](/static/workshop/abc/code-flow.png)\n### Sample data\n4 people, scores, tags",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "be3d1d8b-f0fc-4f7e-8117-0b2881162e10",
+      "name": "Card: Sample data 2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        360,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  { json: { name: 'Priya', score: 92, isActive: true,  tags: ['n8n', 'ai'] } },\n  { json: { name: 'Arjun', score: 67, isActive: true,  tags: ['automation'] } },\n  { json: { name: 'Neha',  score: 48, isActive: false, tags: ['design', 'ux'] } },\n  { json: { name: 'Kabir', score: 88, isActive: true,  tags: ['backend'] } },\n];"
+      },
+      "id": "60c8f01b-049b-451b-987c-421f92010fae",
+      "name": "Sample data (flow)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        2010
+      ]
+    },
+    {
+      "parameters": {
+        "content": "![fork](/static/workshop/abc/fork.png)\n### IF\nscore ≥ 80 ?",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "c0f8ac44-478a-40ef-a04d-3a14527993b5",
       "name": "Card: IF",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        1200
+        720,
+        1820
       ]
     },
     {
@@ -554,7 +637,7 @@
           },
           "conditions": [
             {
-              "id": "043f76bb-19c6-4439-9948-7b870d794c14",
+              "id": "26eed7ad-de25-4d5f-b634-751711925956",
               "leftValue": "={{ $json.score }}",
               "rightValue": 80,
               "operator": {
@@ -567,29 +650,29 @@
         },
         "options": {}
       },
-      "id": "a22e810f-dcde-44ee-a34f-14e939a9db36",
-      "name": "IF Condition",
+      "id": "687cac9c-f337-45d9-892a-fa78340435da",
+      "name": "IF",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
       "position": [
-        -220,
-        1320
+        820,
+        2010
       ]
     },
     {
       "parameters": {
-        "content": "![pencil](/static/workshop/abc/pencil.png)\n**TRUE / FALSE** · tag the grade",
-        "height": 250,
-        "width": 240,
-        "color": 6
+        "content": "![pencil-flow](/static/workshop/abc/pencil-flow.png)\n### Two paths\ngrade A or grade B",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "cad809ec-a548-4457-accc-077f3f5b9c86",
-      "name": "Card: TRUE / FALSE",
+      "id": "7096ed9e-ad9f-4a97-baef-1fc23f5cf291",
+      "name": "Card: Two paths",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        1200
+        1080,
+        1820
       ]
     },
     {
@@ -597,9 +680,9 @@
         "assignments": {
           "assignments": [
             {
-              "id": "1999d3ba-a7f4-4968-88f0-7149c5fe7a85",
+              "id": "5a535602-81c3-4e44-8e40-efb7fb6923c2",
               "name": "grade",
-              "value": "A ✅",
+              "value": "A",
               "type": "string"
             }
           ]
@@ -607,13 +690,13 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "f2d1e203-75ff-4a68-aebd-340108b054b2",
-      "name": "TRUE — Grade A",
+      "id": "2c8b554a-5493-41bd-9cc0-ce6f962bdafe",
+      "name": "Grade A",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        50,
-        1280
+        1180,
+        1960
       ]
     },
     {
@@ -621,9 +704,9 @@
         "assignments": {
           "assignments": [
             {
-              "id": "49f7701e-607d-477f-8910-9603842f0d8b",
+              "id": "52d30304-6956-4c90-8bc0-fa6626e7e278",
               "name": "grade",
-              "value": "B ⚠️",
+              "value": "B",
               "type": "string"
             }
           ]
@@ -631,29 +714,29 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "8c03e847-03e5-4fe0-94a3-fa732190e936",
-      "name": "FALSE — Grade B",
+      "id": "f0f2f60e-2f04-4942-8f69-f7ea926fc271",
+      "name": "Grade B",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        50,
-        1380
+        1180,
+        2060
       ]
     },
     {
       "parameters": {
-        "content": "![merge](/static/workshop/abc/merge.png)\n**Merge** · branches → one stream",
-        "height": 250,
-        "width": 240,
-        "color": 6
+        "content": "![merge](/static/workshop/abc/merge.png)\n### Merge\nback to one stream",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "feab314e-e5cd-4761-b2e6-b7ef12a910b1",
+      "id": "090fefa4-4b31-4dee-bf19-e77f4973c7b0",
       "name": "Card: Merge",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        1200
+        1440,
+        1820
       ]
     },
     {
@@ -661,29 +744,29 @@
         "mode": "append",
         "numberInputs": 2
       },
-      "id": "8710c842-9dee-4acc-a9c0-f26d312c99d4",
-      "name": "Merge (Append)",
+      "id": "256571f6-43da-4e62-9822-511df67867af",
+      "name": "Merge",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        320,
-        1320
+        1540,
+        2010
       ]
     },
     {
       "parameters": {
-        "content": "![cycle](/static/workshop/abc/cycle.png)\n**Loop Over Items** · 2 per batch",
-        "height": 250,
-        "width": 240,
-        "color": 6
+        "content": "![cycle](/static/workshop/abc/cycle.png)\n### Loop\n2 items per batch",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "02e153c0-4083-4189-b20f-6d802d062f30",
-      "name": "Card: Loop Over Items",
+      "id": "c4629938-16da-4684-b9d8-caede063cf73",
+      "name": "Card: Loop",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        570,
-        1200
+        1800,
+        1820
       ]
     },
     {
@@ -691,29 +774,29 @@
         "batchSize": 2,
         "options": {}
       },
-      "id": "15afd2a1-e7a4-485d-97da-05f7942392cd",
+      "id": "10fbbdd9-0ca2-4a0a-bc54-cd341e3383e8",
       "name": "Loop Over Items",
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        590,
-        1320
+        1900,
+        2010
       ]
     },
     {
       "parameters": {
-        "content": "![box](/static/workshop/abc/box.png)\n**Batch / Done** · process, then finish",
-        "height": 250,
-        "width": 240,
-        "color": 6
+        "content": "![box-flow](/static/workshop/abc/box-flow.png)\n### Batch · Done\nwork, then finish",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "2faa8078-3a7c-4b1d-b4cb-d25a232195c8",
-      "name": "Card: Batch / Done",
+      "id": "160697cb-46c4-4d55-960e-78e0c19c03af",
+      "name": "Card: Batch · Done",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        840,
-        1200
+        2160,
+        1820
       ]
     },
     {
@@ -721,7 +804,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "d9ebddfb-8459-446c-979c-06580de924e5",
+              "id": "646860bc-6998-4cec-822e-ba6a0525764c",
               "name": "batchDone",
               "value": true,
               "type": "boolean"
@@ -731,13 +814,13 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "8ee96f7c-d44a-45da-8920-8a88319de830",
+      "id": "c168011f-3584-44c6-9791-c264fcdd1fac",
       "name": "Process Batch",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        860,
-        1380
+        2260,
+        2060
       ]
     },
     {
@@ -745,7 +828,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "512c1043-eb71-48c9-8d07-9b3d33407601",
+              "id": "258357a9-fbde-4fc2-b6cb-f5ca4a0dfd78",
               "name": "summary",
               "value": "=All {{ $input.all().length }} items processed",
               "type": "string"
@@ -754,76 +837,137 @@
         },
         "options": {}
       },
-      "id": "d14d7137-4dc9-4b41-9173-97496f7e9b11",
-      "name": "All Batches Done",
+      "id": "d8a71aa1-711f-42c0-9234-4b93540e3fd3",
+      "name": "All Done",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        860,
-        1280
+        2260,
+        1960
       ]
     },
     {
       "parameters": {
-        "content": "![ai](/static/workshop/abc/ai.gif)\nAn LLM that reasons and calls tools. **Runnable on Sarvam-105B:** open Chat Trigger → *Open chat* → ask anything in Hindi, Hinglish or English.",
-        "height": 130,
+        "content": "![ai](/static/workshop/abc/ai.gif)",
+        "height": 220,
         "width": 2560,
-        "color": 3
+        "color": 7
       },
-      "id": "d46ce6b7-88a8-48f6-9646-ba7197d7dbc4",
-      "name": "Section: ai",
+      "id": "326147fc-8b3e-4870-820b-384926e47eb5",
+      "name": "Section ai",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        1510
+        0,
+        2310
       ]
     },
     {
       "parameters": {
-        "content": "![brain](/static/workshop/abc/brain.png)\n**AI Agent** · reasons, picks tools",
-        "height": 250,
-        "width": 240,
-        "color": 3
+        "content": "![chat-trigger](/static/workshop/abc/chat-trigger.png)\n### Chat Trigger\nopen chat → ask anything",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "3d1a5c76-332d-45ad-b529-ae910eeac40f",
+      "id": "59e129e8-414f-4c54-8047-e239507a18c4",
+      "name": "Card: Chat Trigger",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        2590
+      ]
+    },
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "id": "0567cd20-196b-4a06-a88c-19dcb45d61c3",
+      "name": "Chat Trigger",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        100,
+        2780
+      ],
+      "webhookId": "9bb8ed8a-690f-4f76-bcf2-54f3166460ac"
+    },
+    {
+      "parameters": {
+        "content": "![brain](/static/workshop/abc/brain.png)\n### AI Agent\nreasons, then answers",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "0fade959-d6c5-439f-b99c-efdd66790b41",
       "name": "Card: AI Agent",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        1660
+        360,
+        2590
       ]
     },
     {
       "parameters": {
         "options": {
-          "systemMessage": "You are a concise, friendly assistant for an n8n workshop in India. Use the Calculator tool for any arithmetic. Reply in the language the user writes in."
+          "systemMessage": "You are a concise, friendly assistant for an n8n workshop in India. Reply in the language the user writes in."
         }
       },
-      "id": "af61915e-1ef4-49c1-9729-f9828a6e29be",
+      "id": "4fa36367-cb60-47e6-93f5-f34853c6ef81",
       "name": "AI Agent",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        50,
-        1780
+        460,
+        2780
       ]
     },
     {
       "parameters": {
-        "content": "![chip](/static/workshop/abc/chip.png)\n**Language Model** · Sarvam-105B, OpenAI-compatible",
-        "height": 250,
-        "width": 240,
-        "color": 3
+        "content": "![chat](/static/workshop/abc/chat.png)\n### Respond to Chat\nreply in the chat UI",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "6cf1525e-d7a3-408c-adfa-a5f698a20253",
-      "name": "Card: Language Model",
+      "id": "b66e16a0-aeba-443f-8797-7543d7ead65b",
+      "name": "Card: Respond to Chat",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        1820
+        720,
+        2590
+      ]
+    },
+    {
+      "parameters": {
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "id": "447b9a83-1f20-4759-80eb-178332d21609",
+      "name": "Respond to Chat",
+      "type": "@n8n/n8n-nodes-langchain.chat",
+      "typeVersion": 1.3,
+      "position": [
+        820,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "content": "![chip](/static/workshop/abc/chip.png)\n### Model\nSarvam-105B · OpenAI-compatible",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "61e0db7b-6b38-47d3-9b63-f7fbc426b2fc",
+      "name": "Card: Model",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        360,
+        2960
       ]
     },
     {
@@ -838,103 +982,73 @@
           "maxTokens": 1024
         }
       },
-      "id": "af1a213d-b56e-4692-b9ea-68f02de0c8af",
+      "id": "dc954794-ce4d-4092-81b9-87992128328d",
       "name": "Sarvam-105B",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        320,
-        1940
+        460,
+        3150
       ]
     },
     {
       "parameters": {
-        "content": "![wrench](/static/workshop/abc/wrench.png)\n**Tool** · Calculator · off: Sarvam's API rejects tool messages, enable with an OpenAI/Gemini model",
-        "height": 250,
-        "width": 240,
-        "color": 3
+        "content": "![wrench](/static/workshop/abc/wrench.png)\n### Tool\nCalculator · off (Sarvam API rejects tool messages)",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "343edc45-b463-4b01-a5f6-d2044212568a",
+      "id": "725e2a64-e454-4b3b-9e74-5a62ed54fdd4",
       "name": "Card: Tool",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        570,
-        1820
+        720,
+        2960
       ]
     },
     {
       "parameters": {},
-      "id": "b4d6e70b-8d45-44d5-8e43-7a85afcde5cd",
+      "id": "81033698-5b0c-4900-9ee3-c9c2c3785502",
       "name": "Calculator",
       "type": "@n8n/n8n-nodes-langchain.toolCalculator",
       "typeVersion": 1,
       "position": [
-        590,
-        1940
+        820,
+        3150
       ],
       "disabled": true
     },
     {
       "parameters": {
-        "content": "![chat](/static/workshop/abc/chat.png)\n**Respond to Chat** · reply in the chat UI",
-        "height": 250,
-        "width": 240,
-        "color": 3
-      },
-      "id": "1ba0a65d-148a-444d-8ee1-d6f9b403e775",
-      "name": "Card: Respond to Chat",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        300,
-        1660
-      ]
-    },
-    {
-      "parameters": {
-        "message": "={{ $json.output }}",
-        "options": {}
-      },
-      "id": "0b61a944-df1c-4f4f-971a-09bd0e34b2c0",
-      "name": "Respond to Chat",
-      "type": "@n8n/n8n-nodes-langchain.chat",
-      "typeVersion": 1.3,
-      "position": [
-        320,
-        1780
-      ]
-    },
-    {
-      "parameters": {
-        "content": "![apps](/static/workshop/abc/apps.gif)\nHundreds of apps, auth handled by n8n. These are illustrative: connect a credential and they work.",
-        "height": 130,
+        "content": "![apps](/static/workshop/abc/apps.gif)",
+        "height": 220,
         "width": 2560,
-        "color": 4
+        "color": 7
       },
-      "id": "46d3ade0-7c24-4b56-aea0-67577bce2142",
-      "name": "Section: apps",
+      "id": "c2087f25-110e-4a8b-aecc-5f73036c6d32",
+      "name": "Section apps",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        2130
+        0,
+        3450
       ]
     },
     {
       "parameters": {
-        "content": "![mic](/static/workshop/abc/mic.png)\n**Sarvam AI** · speech ↔ text, chat, 22 languages",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![mic](/static/workshop/abc/mic.png)\n### Sarvam AI\nspeech, chat, 22 languages",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "fea2110b-02bc-42df-82b3-f1ada4ea1dd5",
+      "id": "5e034f91-cdc1-4a09-a1cf-d434c8b61f2f",
       "name": "Card: Sarvam AI",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        2280
+        0,
+        3730
       ]
     },
     {
@@ -947,61 +1061,61 @@
         "text": "नमस्ते! n8n वर्कशॉप में आपका स्वागत है।",
         "textToSpeechOptions": {}
       },
-      "id": "4ff0bf26-5174-4718-804a-9a005d9e6c6e",
+      "id": "9960ad89-9963-4339-9ce3-b195cbc610c2",
       "name": "Sarvam AI",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
       "position": [
-        -220,
-        2400
+        100,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![gmail](/static/workshop/abc/gmail.png)\n**Gmail** · send, read, label",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![gmail](/static/workshop/abc/gmail.png)\n### Gmail\nsend, read, label",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "bcc6861d-5b2f-4331-a109-13110f6ce8d8",
-      "name": "Card: Gmail",
+      "id": "6752f94f-3cf0-4de0-84a0-9abc94c43b02",
+      "name": "Card: Gmail 2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        2280
+        360,
+        3730
       ]
     },
     {
       "parameters": {
         "sendTo": "someone@example.com",
         "subject": "Hello from n8n",
-        "message": "=Hi {{ $json.name }}",
+        "message": "Hi there",
         "options": {}
       },
-      "id": "c60e7592-e773-4319-9f76-1cde5a6dfcc1",
-      "name": "Gmail — Send Email",
+      "id": "e4a2068b-ee3f-40e5-b6e5-0bae61ef205f",
+      "name": "Gmail",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        50,
-        2400
+        460,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![sheet](/static/workshop/abc/sheet.png)\n**Google Sheets** · append, read, update",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![sheet](/static/workshop/abc/sheet.png)\n### Google Sheets\nappend, read, update",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "a14eba3b-1e9b-409e-b933-54da56e5604f",
+      "id": "c7774edc-4dc2-4e90-b1dd-c6788b3f9131",
       "name": "Card: Google Sheets",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        2280
+        720,
+        3730
       ]
     },
     {
@@ -1018,29 +1132,29 @@
           "value": ""
         }
       },
-      "id": "9cd1fe92-e144-4677-81fc-40e19b76944e",
-      "name": "Google Sheets — Append",
+      "id": "19686c26-b42a-42cb-be12-fea6b65755f7",
+      "name": "Google Sheets",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        320,
-        2400
+        820,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![page](/static/workshop/abc/page.png)\n**Notion** · pages & databases",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![page](/static/workshop/abc/page.png)\n### Notion\npages and databases",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "cd562f69-f9de-4344-a385-ad759cc7d923",
+      "id": "84301d8c-255f-4c34-ac9c-0cbb422dc49b",
       "name": "Card: Notion",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        570,
-        2280
+        1080,
+        3730
       ]
     },
     {
@@ -1052,29 +1166,29 @@
         },
         "options": {}
       },
-      "id": "e79fca91-8bd0-4011-b0d4-e43b22fde855",
-      "name": "Notion — Create Page",
+      "id": "fac71b84-2965-4375-b8d2-73a6efaf4141",
+      "name": "Notion",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        590,
-        2400
+        1180,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![plane](/static/workshop/abc/plane.png)\n**Telegram** · bot messages",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![plane](/static/workshop/abc/plane.png)\n### Telegram\nbot messages",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "2b75abbe-3fdd-4513-b1c9-aa9e9fd09242",
+      "id": "818c0946-420c-4c57-8362-a62c0f29ec2e",
       "name": "Card: Telegram",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        840,
-        2280
+        1440,
+        3730
       ]
     },
     {
@@ -1083,29 +1197,29 @@
         "text": "Hello from n8n!",
         "additionalFields": {}
       },
-      "id": "8d9bb308-364d-43a7-a2ba-ddf46a50a067",
-      "name": "Telegram — Send Message",
+      "id": "d5a127a3-0be9-4bbd-b627-db0ecb8fa1fa",
+      "name": "Telegram",
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        860,
-        2400
+        1540,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![hash](/static/workshop/abc/hash.png)\n**Slack** · channels & DMs",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![hash](/static/workshop/abc/hash.png)\n### Slack\nchannels and DMs",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "899c102a-08db-4626-809b-27cdc3245c70",
+      "id": "696bf4f2-3306-4653-bef1-68c495d9d0d4",
       "name": "Card: Slack",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1110,
-        2280
+        1800,
+        3730
       ]
     },
     {
@@ -1119,103 +1233,103 @@
         "text": "Workflow complete!",
         "otherOptions": {}
       },
-      "id": "bc5e447d-a364-4354-abdc-7bdb26b0ff18",
-      "name": "Slack — Post Message",
+      "id": "75cc7380-5a04-441f-a962-f8c2fe6d606a",
+      "name": "Slack",
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        1130,
-        2400
+        1900,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![subflow](/static/workshop/abc/subflow.png)\n**Execute Workflow** · run another flow",
-        "height": 250,
-        "width": 240,
-        "color": 4
+        "content": "![subflow](/static/workshop/abc/subflow.png)\n### Execute Workflow\nrun another workflow",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "da07a446-eaa9-4ab0-9023-d7c9e0cec440",
+      "id": "748f249b-4916-4fa9-833a-1a789c30ffb9",
       "name": "Card: Execute Workflow",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1380,
-        2280
+        2160,
+        3730
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "0e3107d2-b711-4fec-b073-6d1f5f08b5c6",
-      "name": "Execute Sub-Workflow",
+      "id": "2dd86e08-7b25-4a56-aac3-326ae3ad4862",
+      "name": "Execute Workflow",
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1400,
-        2400
+        2260,
+        3920
       ]
     },
     {
       "parameters": {
-        "content": "![human](/static/workshop/abc/human.gif)\nPause until a person answers. Essential for AI approval flows.",
-        "height": 130,
+        "content": "![human](/static/workshop/abc/human.gif)",
+        "height": 220,
         "width": 2560,
-        "color": 2
+        "color": 7
       },
-      "id": "bf669e2a-9b3f-421a-bfd0-24e8df51c5ef",
-      "name": "Section: human",
+      "id": "c7546be2-063c-4306-9f54-731a04f38058",
+      "name": "Section human",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        2590
+        0,
+        4220
       ]
     },
     {
       "parameters": {
-        "content": "![reply](/static/workshop/abc/reply.png)\n**Respond to Webhook** · answer the caller",
-        "height": 250,
-        "width": 240,
-        "color": 2
+        "content": "![reply](/static/workshop/abc/reply.png)\n### Respond to Webhook\nanswer the caller",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "10e093cd-7d58-45be-baf4-2ff6474b4097",
+      "id": "a06f680b-27b6-46df-8a00-585a556b0ae4",
       "name": "Card: Respond to Webhook",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        2740
+        0,
+        4500
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "f7d9cfd9-9b2d-459f-a099-5121f08e89a4",
+      "id": "5f2afc53-5b7b-4796-a9da-8016a8a150f4",
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.4,
       "position": [
-        -220,
-        2860
+        100,
+        4690
       ]
     },
     {
       "parameters": {
-        "content": "![mail-wait](/static/workshop/abc/mail-wait.png)\n**Gmail · Send & Wait** · approve by email",
-        "height": 250,
-        "width": 240,
-        "color": 2
+        "content": "![mail-wait](/static/workshop/abc/mail-wait.png)\n### Gmail · wait\napprove by email",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "c80390f5-a968-4261-81b8-3c96b4b347ed",
-      "name": "Card: Gmail · Send & Wait",
+      "id": "656fba24-30a8-4266-bd80-91f61cc05e91",
+      "name": "Card: Gmail · wait",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        2740
+        360,
+        4500
       ]
     },
     {
@@ -1226,29 +1340,29 @@
         "message": "Please approve this action.",
         "options": {}
       },
-      "id": "e4d6b266-0d7c-4c3d-82ca-1eaf95d426d8",
-      "name": "Gmail — Send & Wait",
+      "id": "adf32df6-bf05-4100-abf8-a348ddd73536",
+      "name": "Gmail: Send & Wait",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        50,
-        2860
+        460,
+        4690
       ]
     },
     {
       "parameters": {
-        "content": "![hash-wait](/static/workshop/abc/hash-wait.png)\n**Slack · Send & Wait** · approve by button",
-        "height": 250,
-        "width": 240,
-        "color": 2
+        "content": "![hash-wait](/static/workshop/abc/hash-wait.png)\n### Slack · wait\napprove with a button",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "45d1055a-e4ac-4ba7-ac03-897b714acf5b",
-      "name": "Card: Slack · Send & Wait",
+      "id": "13279c58-b267-4c7c-8930-4afc5dfa2547",
+      "name": "Card: Slack · wait",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        2740
+        720,
+        4500
       ]
     },
     {
@@ -1263,29 +1377,29 @@
         "message": "Approve this?",
         "options": {}
       },
-      "id": "4dc68581-a72a-4798-a3d5-7473c552138a",
-      "name": "Slack — Send & Wait",
+      "id": "a42155a7-b110-4fac-b069-3089b7c04755",
+      "name": "Slack: Send & Wait",
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        320,
-        2860
+        820,
+        4690
       ]
     },
     {
       "parameters": {
-        "content": "![hand](/static/workshop/abc/hand.png)\n**Form · next page** · ask the user mid-flow",
-        "height": 250,
-        "width": 240,
-        "color": 2
+        "content": "![hand](/static/workshop/abc/hand.png)\n### Form page\nask the user mid-flow",
+        "height": 330,
+        "width": 300,
+        "color": 7
       },
-      "id": "9b41943c-e3c5-4157-9160-5b7bb1b4049b",
-      "name": "Card: Form · next page",
+      "id": "2b7bc965-e86e-4230-8791-a6a314c936fb",
+      "name": "Card: Form page",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        570,
-        2740
+        1080,
+        4500
       ]
     },
     {
@@ -1312,75 +1426,131 @@
         },
         "options": {}
       },
-      "id": "b22a37fc-41b9-41f9-b7da-b08aa631c866",
-      "name": "Form — Next Page",
+      "id": "a2ccfed8-204b-4da9-affc-c2346b864f3c",
+      "name": "Form: Next Page",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
       "position": [
-        590,
-        2860
+        1180,
+        4690
       ],
-      "webhookId": "96ba4bcc-7826-4f16-b371-3e7d22957297"
+      "webhookId": "16ffc81c-b972-427f-8a65-9e06eab261bb"
     },
     {
       "parameters": {
-        "content": "![advanced](/static/workshop/abc/advanced.gif)\nPower patterns. **Runnable:** Code computes stats over all items in one go.",
-        "height": 130,
+        "content": "![advanced](/static/workshop/abc/advanced.gif)",
+        "height": 220,
         "width": 2560,
         "color": 7
       },
-      "id": "e9611baa-ef2b-4a24-90cc-d17b21862576",
-      "name": "Section: advanced",
+      "id": "a6e10018-5704-4499-8c92-593922475e7f",
+      "name": "Section advanced",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        3050
+        0,
+        4990
       ]
     },
     {
       "parameters": {
-        "content": "![code](/static/workshop/abc/code.png)\n**Code** · stats over all items",
-        "height": 250,
-        "width": 240,
+        "content": "![bolt](/static/workshop/abc/bolt.png)\n### ▶ Run\npress Execute",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "c367a734-7196-445f-97da-930b3269d51e",
+      "id": "470dc25c-f1d3-4b25-b45e-ef5fb2673607",
+      "name": "Card: ▶ Run 3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        5270
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5ed1091f-1aae-480e-8512-fc30693af34d",
+      "name": "Run advanced",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        5460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "![code-advanced](/static/workshop/abc/code-advanced.png)\n### Sample data\n4 people, scores, tags",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "fc27578d-552c-4a46-922a-44493c0ea9f6",
+      "name": "Card: Sample data 3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        360,
+        5270
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  { json: { name: 'Priya', score: 92, isActive: true,  tags: ['n8n', 'ai'] } },\n  { json: { name: 'Arjun', score: 67, isActive: true,  tags: ['automation'] } },\n  { json: { name: 'Neha',  score: 48, isActive: false, tags: ['design', 'ux'] } },\n  { json: { name: 'Kabir', score: 88, isActive: true,  tags: ['backend'] } },\n];"
+      },
+      "id": "ab97f590-29ef-4561-bc83-3826422d9979",
+      "name": "Sample data (advanced)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        5460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "![code](/static/workshop/abc/code.png)\n### Code\nstats over all items",
+        "height": 330,
+        "width": 300,
+        "color": 7
+      },
+      "id": "576affe3-1c05-414b-8edd-82fa7ede715e",
       "name": "Card: Code",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        3200
+        720,
+        5270
       ]
     },
     {
       "parameters": {
         "jsCode": "const items = $input.all().map(i => i.json);\nconst scores = items.map(i => i.score);\nreturn [{ json: {\n  count: items.length,\n  average: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),\n  max: Math.max(...scores),\n  active: items.filter(i => i.isActive).length,\n} }];"
       },
-      "id": "b246ca4a-4ccc-4dfc-90c8-0eecb7eb88c0",
-      "name": "Code — Aggregate Stats",
+      "id": "167190f8-e0a8-4bdb-a414-93e762a4b8e3",
+      "name": "Code: Stats",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -220,
-        3320
+        820,
+        5460
       ]
     },
     {
       "parameters": {
-        "content": "![globe](/static/workshop/abc/globe.png)\n**HTTP Request** · call any API",
-        "height": 250,
-        "width": 240,
+        "content": "![globe](/static/workshop/abc/globe.png)\n### HTTP Request\nPOST to any API",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "ef034009-abd5-47ab-91d8-afbb4d132c31",
+      "id": "fdd72a7f-e074-4ffc-aaf9-b6077ba4aa96",
       "name": "Card: HTTP Request",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        30,
-        3200
+        1080,
+        5270
       ]
     },
     {
@@ -1392,29 +1562,29 @@
         "jsonBody": "={{ JSON.stringify($json) }}",
         "options": {}
       },
-      "id": "9c1ba037-f896-44a2-9b89-19cb2aff61a1",
-      "name": "HTTP POST to API",
+      "id": "6f61f11c-cc8b-4a5f-970e-e0a297833710",
+      "name": "HTTP Request",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        50,
-        3320
+        1180,
+        5460
       ]
     },
     {
       "parameters": {
-        "content": "![plug](/static/workshop/abc/plug.png)\n**MCP Client** · tools from any MCP server",
-        "height": 250,
-        "width": 240,
+        "content": "![plug](/static/workshop/abc/plug.png)\n### MCP Client\ntools from any MCP server",
+        "height": 330,
+        "width": 300,
         "color": 7
       },
-      "id": "61d96395-46de-40c1-8bcc-3448506dbaa3",
+      "id": "80097847-bc2b-4722-b0c9-34a1aa5b8fb1",
       "name": "Card: MCP Client",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        300,
-        3200
+        1440,
+        5270
       ]
     },
     {
@@ -1422,76 +1592,33 @@
         "endpointUrl": "https://example.com/mcp",
         "options": {}
       },
-      "id": "66ccd663-bb8c-4101-9dd6-b21014645bb8",
+      "id": "a034ce21-1ca2-4ac5-af37-7119dcf4d2d4",
       "name": "MCP Client",
       "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
       "typeVersion": 1.1,
       "position": [
-        320,
-        3320
+        1540,
+        5460
       ]
     }
   ],
   "connections": {
-    "Manual Trigger": {
+    "Run data": {
       "main": [
         [
           {
-            "node": "Sample Data",
+            "node": "Sample data (data)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Sample Data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Webhook Trigger": {
-      "main": [
-        [
-          {
-            "node": "Sample Data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Form Trigger": {
-      "main": [
-        [
-          {
-            "node": "Sample Data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Sample Data": {
+    "Sample data (data)": {
       "main": [
         [
           {
             "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "IF Condition",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Code — Aggregate Stats",
             "type": "main",
             "index": 0
           }
@@ -1542,47 +1669,69 @@
         ]
       ]
     },
-    "IF Condition": {
+    "Run flow": {
       "main": [
         [
           {
-            "node": "TRUE — Grade A",
+            "node": "Sample data (flow)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample data (flow)": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Grade A",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "FALSE — Grade B",
+            "node": "Grade B",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "TRUE — Grade A": {
+    "Grade A": {
       "main": [
         [
           {
-            "node": "Merge (Append)",
+            "node": "Merge",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "FALSE — Grade B": {
+    "Grade B": {
       "main": [
         [
           {
-            "node": "Merge (Append)",
+            "node": "Merge",
             "type": "main",
             "index": 1
           }
         ]
       ]
     },
-    "Merge (Append)": {
+    "Merge": {
       "main": [
         [
           {
@@ -1597,7 +1746,7 @@
       "main": [
         [
           {
-            "node": "All Batches Done",
+            "node": "All Done",
             "type": "main",
             "index": 0
           }
@@ -1666,11 +1815,33 @@
         ]
       ]
     },
-    "Code — Aggregate Stats": {
+    "Run advanced": {
       "main": [
         [
           {
-            "node": "HTTP POST to API",
+            "node": "Sample data (advanced)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample data (advanced)": {
+      "main": [
+        [
+          {
+            "node": "Code: Stats",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code: Stats": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
