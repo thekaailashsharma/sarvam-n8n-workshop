@@ -4,7 +4,7 @@
 running container, executes it and prints every node's status. Usage: npm run e2e [-- samples/x.wav]"""
 import json, os, pathlib, subprocess, sys, tempfile, uuid
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SAMPLE = "/samples/" + pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "samples/standup-english.wav").name
+SAMPLE = "/samples/" + pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "samples/standup-hinglish.wav").name
 WF_ID = "HeadlessTestWf0001"
 NEEDS = {"n8n-nodes-sarvam.sarvam": "sarvamApi", "n8n-nodes-base.github": "githubApi",
          "n8n-nodes-base.googleSheets": "googleSheetsOAuth2Api", "@n8n/n8n-nodes-langchain.lmChatOpenAi": "openAiApi"}

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "# 🎙️ Meeting → Tickets\n![pipeline](/static/workshop/hero.gif)\n**Sarvam AI × n8n** · talk in any Indian language → every action item becomes a **GitHub issue** or a **sheet row**, classified automatically.\nCredentials: **Sarvam AI** (STT) · **OpenAI-compatible** (Sarvam-105B) · **GitHub** · **Google Sheets**.\n",
+        "content": "# 🎙️ Meeting → Tickets\n![pipeline](/static/workshop/hero.gif)\nSpeak in any Indian language. Every action item becomes a **GitHub issue** or a **sheet row**, sorted by what it is.\n**Sarvam AI × n8n** · Saaras v4 hears · Sarvam-105B thinks · n8n routes\n",
         "height": 440,
         "width": 820,
         "color": 7
       },
-      "id": "72c45bac-b1ea-4354-8e3e-edd7128003b4",
+      "id": "de8744e5-1095-4338-95e6-fb789f8ca77b",
       "name": "Sticky: Hero",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -19,12 +19,12 @@
     },
     {
       "parameters": {
-        "content": "## 🧪 Warm-up · one node at a time\nOnly the Sarvam credential needed. Hit **Test step** on each.",
+        "content": "## 🧪 Warm-up · one node at a time\nThree Sarvam skills, three tiny chains. Open a node → **Test step**.",
         "height": 100,
         "width": 1560,
         "color": 4
       },
-      "id": "3d8d25e3-30eb-4553-a1b3-fd59b8505ed7",
+      "id": "96a01d61-0503-474e-b41c-8ee68a2e9c72",
       "name": "Sticky: Warm-up",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -35,12 +35,12 @@
     },
     {
       "parameters": {
-        "content": "### 🎧 Hear · Saaras v4\n![hear](/static/workshop/hear.png)\nHindi stand-up recording → English transcript + detected language.",
+        "content": "### 🎧 Hear · Saaras v4\n![hear](/static/workshop/hear.png)\nHinglish stand-up → English transcript + detected language.",
         "height": 340,
         "width": 500,
         "color": 7
       },
-      "id": "4bbf64b2-bbc9-47f8-a8d4-b02d1970ca0f",
+      "id": "1548311b-43dc-4309-b2a0-51e7a1a2a98a",
       "name": "Sticky: Warm-up STT",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -51,7 +51,7 @@
     },
     {
       "parameters": {},
-      "id": "3e2512e7-c51f-4bc3-95a9-d5e19260526f",
+      "id": "d94520d6-aea4-4ba7-b0c0-0d3fddc65096",
       "name": "▶ Hear",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -62,10 +62,10 @@
     },
     {
       "parameters": {
-        "fileSelector": "/samples/standup-hindi.wav",
+        "fileSelector": "/samples/standup-hinglish.wav",
         "options": {}
       },
-      "id": "3a6ff085-c5d6-4594-be21-0512b22a737d",
+      "id": "61bec2d6-e533-44a5-81fe-d6d86f78493a",
       "name": "Try: Read sample",
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
@@ -85,7 +85,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "fe8ef0cb-fb64-4461-82b6-7d270a4a5188",
+      "id": "0aa6a930-1599-4396-8282-c2d27325bdaa",
       "name": "Try: Speech to Text",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -101,7 +101,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "c70ed0ee-85d5-4c17-98dc-f429d0fedd5c",
+      "id": "7295d600-6057-4f2a-aff1-9ebe47206780",
       "name": "Sticky: Warm-up Chat",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -112,7 +112,7 @@
     },
     {
       "parameters": {},
-      "id": "4c991442-1009-4950-8ac8-59916c13ca14",
+      "id": "ff959150-b5f0-4941-86ee-80d7333d2db5",
       "name": "▶ Think",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -134,7 +134,7 @@
           "reasoning_effort": "none"
         }
       },
-      "id": "11c9fb44-6120-4361-b7fe-04c40b0b0214",
+      "id": "302ccd64-455c-4232-932f-758a5987e7d8",
       "name": "Try: Chat",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -150,7 +150,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "bdde2297-fb84-4a8b-b4c4-bc03f6569fc6",
+      "id": "6121fab0-d05b-4383-ae94-cc01433a9efe",
       "name": "Sticky: Warm-up TTS",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -161,7 +161,7 @@
     },
     {
       "parameters": {},
-      "id": "eed4b4ca-f5dc-4020-9de8-ba5075c36748",
+      "id": "d1a21e35-d3cd-4a38-b57c-8016ff025ca3",
       "name": "▶ Speak",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -182,7 +182,7 @@
           "output_audio_codec": "mp3"
         }
       },
-      "id": "f14f4924-75d9-48d0-bdbd-758a7a03d1ef",
+      "id": "d22d6ea9-9fe3-4a03-8d4b-2dff406c1c59",
       "name": "Try: Text to Speech",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -193,12 +193,12 @@
     },
     {
       "parameters": {
-        "content": "## 🚀 The workflow · recording → classified tickets\nOpen **Upload Recording** → *Test step* → upload `samples/standup-english.wav`. Watch the classifier fan out.",
+        "content": "## 🚀 The workflow · recording → classified tickets\n**Upload Recording** → *Test step* → drop in `samples/standup-hinglish.wav` → watch the classifier fan out → open the results page.",
         "height": 100,
         "width": 2900,
         "color": 5
       },
-      "id": "672330b4-416f-4d8c-97e1-4e317c98ba03",
+      "id": "1592b280-52f8-4b65-8127-ab259db01bd0",
       "name": "Sticky: Pipeline",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -209,12 +209,12 @@
     },
     {
       "parameters": {
-        "content": "### 1 · Upload\nAny audio ≤ 30 s (real-time STT limit; Batch API for longer). Optional meeting title.",
+        "content": "### 1 · Upload\nAny audio, ≤ 30 s. Optional meeting title.",
         "height": 420,
         "width": 260,
         "color": 7
       },
-      "id": "905dbd72-3c2e-4357-8fc8-494064916503",
+      "id": "e9f293bd-589a-49ab-bd8e-4a6c77c68c81",
       "name": "Sticky: Upload",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -225,12 +225,12 @@
     },
     {
       "parameters": {
-        "content": "### 2 · Config ✏️\nGitHub owner/repo and the sheet ID. Edit here only.",
+        "content": "### 2 · Config ✏️\nGitHub repo + sheet ID. The only node you edit.",
         "height": 420,
         "width": 260,
         "color": 5
       },
-      "id": "63167bc3-735e-4374-85d3-2a5b138fef70",
+      "id": "5d9f53d4-b139-4099-86ce-70a7d635cec1",
       "name": "Sticky: Config",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -241,12 +241,12 @@
     },
     {
       "parameters": {
-        "content": "### 3 · Hear\nSaaras v4, *translate* → English `transcript` + `language_code`.",
+        "content": "### 3 · Hear 🎧\nSaaras v4 translates any language to English and tells you which one it heard.",
         "height": 420,
         "width": 260,
         "color": 7
       },
-      "id": "60e8bc15-0dc8-41ea-95b6-8102ed40efac",
+      "id": "e4d04a22-60f6-4f24-9680-e2d00b9cdccd",
       "name": "Sticky: Hear",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -257,12 +257,12 @@
     },
     {
       "parameters": {
-        "content": "### 4 · Guard\nEmpty or tiny transcript → polite retry page. No garbage tickets.",
+        "content": "### 4 · Guard 🛡️\nSilence or noise → a polite retry page, never a garbage ticket.",
         "height": 480,
         "width": 260,
         "color": 7
       },
-      "id": "90dfb23b-2c2a-4f09-9b34-4d3a8a98c63b",
+      "id": "c43fd9d7-b0b5-4606-a39a-8feda8fd7a0e",
       "name": "Sticky: Guard",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -273,12 +273,12 @@
     },
     {
       "parameters": {
-        "content": "### 5 · Summarize\nn8n **Summarization Chain** on Sarvam-105B → 4-6 bullets.",
+        "content": "### 5 · Summarize 📝\nn8n Summarization Chain → 4-6 bullets for people who missed the meeting.",
         "height": 420,
         "width": 260,
         "color": 6
       },
-      "id": "e1c50b76-e8b8-4a0b-98a8-74d85131a482",
+      "id": "2ba9db58-41fd-46c1-96f6-7b53032c4496",
       "name": "Sticky: Summarize",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -289,12 +289,12 @@
     },
     {
       "parameters": {
-        "content": "### 6 · Extract\nn8n **Information Extractor** with a JSON schema → list of action items.",
+        "content": "### 6 · Extract 🔍\nn8n Information Extractor + JSON schema → title, owner, priority, due for every item.",
         "height": 420,
         "width": 260,
         "color": 6
       },
-      "id": "c65ba659-c7b7-4ae5-a3c5-df6dfed73e78",
+      "id": "dd3ea2f2-3ac7-4a79-86cd-e79c4f002f8a",
       "name": "Sticky: Extract",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -305,12 +305,12 @@
     },
     {
       "parameters": {
-        "content": "### 7 · Split\nOne item per action. From here on, every row is a ticket.",
+        "content": "### 7 · Split ✂️\nOne item per action. From here on, each row is a ticket.",
         "height": 420,
         "width": 260,
         "color": 7
       },
-      "id": "5e89ac18-88dd-4577-97cf-2d7da72711f4",
+      "id": "adf4577a-b925-4ed2-aa59-3eae28f8ab2f",
       "name": "Sticky: Split",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -321,12 +321,12 @@
     },
     {
       "parameters": {
-        "content": "### 8 · Classify\nn8n **Text Classifier**: bug · feature · task · decision · follow-up. Each class is a branch — add Linear, Trello, Notion…",
+        "content": "### 8 · Classify 🏷️\nn8n Text Classifier: bug · feature · task · decision · follow-up. One output per class.",
         "height": 620,
         "width": 260,
         "color": 6
       },
-      "id": "2565d1cf-aeb6-430a-9de1-1952cce64b10",
+      "id": "78152f48-af47-4879-bf41-d176a4d190d7",
       "name": "Sticky: Classify",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -360,7 +360,7 @@
           "buttonLabel": "Create tickets"
         }
       },
-      "id": "8eca8ceb-5c30-4c08-9090-59cbf16084ca",
+      "id": "e38ed95d-abe1-40be-9e4a-e82e450e6cb9",
       "name": "Upload Recording",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.5,
@@ -368,26 +368,26 @@
         0,
         300
       ],
-      "webhookId": "3177f1a0-5890-4889-a345-05e133b76ee9"
+      "webhookId": "c3ae019a-eb6b-4150-b261-a9d5087e101e"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "5eacf11c-b8d9-4fbc-8971-8e527216f634",
+              "id": "48cfadcb-c3c0-4549-8343-0a6317b7e79e",
               "name": "githubOwner",
               "value": "thekaailashsharma",
               "type": "string"
             },
             {
-              "id": "910b6ad1-f7c9-4078-a25d-1475f3ebf015",
+              "id": "55c3c9fb-c617-4836-8776-8725e85edaba",
               "name": "githubRepo",
               "value": "sarvam-n8n-workshop",
               "type": "string"
             },
             {
-              "id": "aa4c4556-55d2-4743-91a4-ebf2c28097b4",
+              "id": "0e0ed862-7086-41a1-bb33-493224990ff6",
               "name": "sheetId",
               "value": "1VMB0tBNve0teNcL176g5Yvo9ElCld657Ab0aPY72uZA",
               "type": "string"
@@ -397,7 +397,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "378e3d23-89fc-483b-8dcc-827549a75cb7",
+      "id": "0c221ad6-3d84-45bb-b7b1-17733e873211",
       "name": "Config",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -417,7 +417,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "84031ebe-b691-434a-be89-d7915ad34d34",
+      "id": "8a52b895-41fe-49a9-b65e-d88cba9ae37e",
       "name": "Sarvam: Transcribe",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -437,7 +437,7 @@
           },
           "conditions": [
             {
-              "id": "00312330-be85-4816-b858-19ec62e74e64",
+              "id": "c36a8f0a-3a8f-4b04-933b-34dc95f90d11",
               "leftValue": "={{ ($json.transcript || '').trim().length }}",
               "rightValue": 20,
               "operator": {
@@ -450,7 +450,7 @@
         },
         "options": {}
       },
-      "id": "a13d5606-4c9c-4f4f-af47-08169a928d85",
+      "id": "4bb1636e-5814-4751-aa54-6d55f513b070",
       "name": "Heard Anything?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
@@ -467,7 +467,7 @@
         "completionMessage": "The recording seems silent or too short. Please try again with a clearer file.",
         "options": {}
       },
-      "id": "9a68aa9c-077c-4e8b-a379-ac166f40f319",
+      "id": "b32518d0-c684-44ed-ab5b-7a41b2b7a9a5",
       "name": "Couldn't Hear",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -475,7 +475,7 @@
         900,
         500
       ],
-      "webhookId": "bf3a6175-2176-4955-8627-a225a93085ab"
+      "webhookId": "f6e167fb-5aa8-4efd-9561-9326ff6a7709"
     },
     {
       "parameters": {
@@ -492,7 +492,7 @@
           }
         }
       },
-      "id": "0a796c00-a9af-4916-b4f0-eda5e3b08f58",
+      "id": "5d2a4d89-b489-457d-aae3-6752940a50d9",
       "name": "Summarize Meeting",
       "type": "@n8n/n8n-nodes-langchain.chainSummarization",
       "typeVersion": 2.1,
@@ -510,7 +510,7 @@
           "systemPromptTemplate": "You are an expert meeting scribe. Extract every action item, decision and follow-up from the transcript. Never invent names or dates. {format_instructions}"
         }
       },
-      "id": "fd0d3477-6e49-4516-bafe-b8cb8aeeee0a",
+      "id": "157f5bd6-2aa6-43ee-8f30-b66e32e6c4cb",
       "name": "Extract Action Items",
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.2,
@@ -525,7 +525,7 @@
         "include": "noOtherFields",
         "options": {}
       },
-      "id": "e6310835-2813-4c77-a474-a9d0d70ecbc5",
+      "id": "8ee5e924-1f4d-460e-8023-98dee1b1eec6",
       "name": "One Item per Action",
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
@@ -566,7 +566,7 @@
           "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."
         }
       },
-      "id": "8cb16d08-38b5-46e3-9d83-f096d5cd4c64",
+      "id": "4a801364-0e88-4503-a2be-961e3a8c17fa",
       "name": "Classify",
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
@@ -587,7 +587,7 @@
           "maxTokens": 2048
         }
       },
-      "id": "24bb28de-e041-4309-8ff9-b46439e9fa47",
+      "id": "58923148-7a6b-4b3f-a7d1-7015dea49111",
       "name": "Sarvam-105B",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
@@ -598,12 +598,12 @@
     },
     {
       "parameters": {
-        "content": "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.\n`sarvam-105b-conversations` answers directly; plain `sarvam-105b` thinks first and needs a much bigger token budget.",
+        "content": "### 🧠 Sarvam-105B is the brain\nOne OpenAI Chat Model node, Base URL `https://api.sarvam.ai/v1`, powers all three n8n AI nodes. `-conversations` answers directly; plain `sarvam-105b` thinks first and needs a bigger token budget.",
         "height": 220,
         "width": 560,
         "color": 6
       },
-      "id": "5e50506c-2acf-46b3-81de-8d5d5ee58ce0",
+      "id": "33ea3cc7-fa6c-47d4-a02b-04c881dca940",
       "name": "Sticky: LLM",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -614,12 +614,12 @@
     },
     {
       "parameters": {
-        "content": "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) and the sheet · **decision / follow-up / other** → sheet. Every class is one node away from any tool.",
+        "content": "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) + sheet · **decision / follow-up** → sheet. Any class is one node away from Linear, Trello, Notion…",
         "height": 1100,
         "width": 600,
         "color": 1
       },
-      "id": "65a21a83-ddb9-4605-8ff7-1d12c412ad46",
+      "id": "bc1b586f-e3ff-4710-b04a-799aa53bcfc0",
       "name": "Sticky: Branches",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -652,7 +652,7 @@
         ],
         "assignees": []
       },
-      "id": "03da8863-ce82-4f4d-a2a2-55c8cb570553",
+      "id": "952b4abf-4357-46b7-8aed-33437d573853",
       "name": "GitHub: Bug Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -685,7 +685,7 @@
         ],
         "assignees": []
       },
-      "id": "08a0a501-64f1-46bd-9605-5fc3a265bb03",
+      "id": "c83302a2-6bdf-4932-9d64-07ba4df95d6b",
       "name": "GitHub: Feature Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -713,7 +713,7 @@
           "description": "={{ $json.detail }}"
         }
       },
-      "id": "61ba1141-9973-458f-9c62-222c5f54458e",
+      "id": "04d1ce11-faae-4d66-9cde-b14b5e9230fd",
       "name": "Jira: Task (disabled)",
       "type": "n8n-nodes-base.jira",
       "typeVersion": 1,
@@ -728,7 +728,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "550f6754-4156-40f7-ab02-326cd71a9d4c",
+              "id": "db334e36-cdc3-46ab-ade9-4e87644ed1b1",
               "name": "type",
               "value": "task",
               "type": "string"
@@ -738,7 +738,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "e088c089-f69f-4a09-9708-0aed77af465d",
+      "id": "79abd1cd-7fd9-448d-8995-a041fc4dbc4f",
       "name": "Tag: Task",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -752,7 +752,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "62195ba8-8b8c-4fa8-bb74-1fa05eabd0b0",
+              "id": "413513b7-f925-406a-bd57-f67d1e35a8ac",
               "name": "type",
               "value": "decision",
               "type": "string"
@@ -762,7 +762,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "edd73ced-6e8f-42b7-8a88-597fc0416063",
+      "id": "7124daab-716f-46a0-b44b-eaf2700b05a5",
       "name": "Tag: Decision",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -776,7 +776,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "062a7826-b921-42af-b390-ca02cdc6cdd9",
+              "id": "cec54fb2-7cdd-4631-b19d-185987ec82f5",
               "name": "type",
               "value": "followup",
               "type": "string"
@@ -786,7 +786,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "cc452e45-16dc-4cab-a384-dc5bfbecd403",
+      "id": "ef10627f-e16e-4384-8643-5af6079c3fe1",
       "name": "Tag: Follow-up",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -800,7 +800,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "df8716e5-0ba7-44b7-b728-1dd00a873606",
+              "id": "3588f4b2-1702-452a-9905-c20a10ae5b72",
               "name": "type",
               "value": "other",
               "type": "string"
@@ -810,7 +810,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "0edc29fa-dce2-480e-bc1a-37f40f0a0156",
+      "id": "28d327f2-93b2-406d-a8fa-fa5e778c1c3f",
       "name": "Tag: Other",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -821,12 +821,12 @@
     },
     {
       "parameters": {
-        "content": "### 10 · Record + report 📋\nBranches merge → one sheet row per item (with the GitHub link when there is one) → the uploader sees the summary and every ticket.",
+        "content": "### 10 · Record + report 📋\nBranches merge → one sheet row per item, GitHub link included → the uploader sees the summary and every ticket.",
         "height": 420,
         "width": 1020,
         "color": 4
       },
-      "id": "2301a9b3-153e-42c3-9f20-19e9c9c7ac98",
+      "id": "63761d8c-177c-4c3b-9d30-69207d925c72",
       "name": "Sticky: Record",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -840,7 +840,7 @@
         "mode": "append",
         "numberInputs": 6
       },
-      "id": "7c196fbf-432f-4739-a97d-24b0aa3777d8",
+      "id": "2b0e2270-a060-45ce-a089-8b645013289c",
       "name": "Merge Branches",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
@@ -974,7 +974,7 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "0040dbf9-00b5-4bde-9b17-1894121aa47b",
+      "id": "c3e1103c-839e-4fc4-8e19-b3becde4c010",
       "name": "Log to Sheet",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -988,7 +988,7 @@
         "aggregate": "aggregateAllItemData",
         "options": {}
       },
-      "id": "5d425617-e23f-4801-8581-e3278eed45df",
+      "id": "d9c1c403-65f4-4498-977f-d272cc4de841",
       "name": "Collect Results",
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
@@ -1004,7 +1004,7 @@
         "responseText": "={{ (() => {\n  const items = $json.data || [];\n  const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();\n  const lang = $('Sarvam: Transcribe').first().json.language_code;\n  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href=\"${i.Link}\" target=\"_blank\">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}</small></li>`;\n  return `<div style=\"font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5\">\n    <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>\n    <p style=\"color:#666\">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>\n    <h3>Summary</h3><pre style=\"white-space:pre-wrap;background:#f6f6f8;padding:12px;border-radius:8px\">${summary}</pre>\n    <h3>Tickets</h3><ul>${items.map(row).join('')}</ul></div>`;\n})() }}",
         "options": {}
       },
-      "id": "e495f5cd-b5d3-4e8b-92b2-436c65e1022a",
+      "id": "7aa2bfbe-3f19-427f-9bbc-715d6535f80d",
       "name": "Show Results",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -1012,7 +1012,7 @@
         3460,
         300
       ],
-      "webhookId": "83786107-3208-4644-ba76-930d9c68704a"
+      "webhookId": "f7efd7bf-bc07-4439-a863-55a2f129ad06"
     }
   ],
   "connections": {

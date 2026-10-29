@@ -40,15 +40,15 @@ def tag(name, type_value, x, y):
 # ═══════════════════════════ HERO + WARM-UP ═══════════════════════════
 sticky("Sticky: Hero", f"""# 🎙️ Meeting → Tickets
 ![pipeline]({HERO})
-**Sarvam AI × n8n** · talk in any Indian language → every action item becomes a **GitHub issue** or a **sheet row**, classified automatically.
-Credentials: **Sarvam AI** (STT) · **OpenAI-compatible** (Sarvam-105B) · **GitHub** · **Google Sheets**.
+Speak in any Indian language. Every action item becomes a **GitHub issue** or a **sheet row**, sorted by what it is.
+**Sarvam AI × n8n** · Saaras v4 hears · Sarvam-105B thinks · n8n routes
 """, -20, -620, 820, 440, 7)
 
-sticky("Sticky: Warm-up", "## 🧪 Warm-up · one node at a time\nOnly the Sarvam credential needed. Hit **Test step** on each.", 880, -620, 1560, 100, 4)
+sticky("Sticky: Warm-up", "## 🧪 Warm-up · one node at a time\nThree Sarvam skills, three tiny chains. Open a node → **Test step**.", 880, -620, 1560, 100, 4)
 WY = -440
-sticky("Sticky: Warm-up STT", f"### 🎧 Hear · Saaras v4\n![hear]({ICON['hear']})\nHindi stand-up recording → English transcript + detected language.", 880, WY - 60, 500, 340, 7)
+sticky("Sticky: Warm-up STT", f"### 🎧 Hear · Saaras v4\n![hear]({ICON['hear']})\nHinglish stand-up → English transcript + detected language.", 880, WY - 60, 500, 340, 7)
 a1 = manual("▶ Hear", 920, WY + 120)
-a2 = node("Try: Read sample", "n8n-nodes-base.readWriteFile", 1, {"fileSelector": "/samples/standup-hindi.wav", "options": {}}, 1080, WY + 120)
+a2 = node("Try: Read sample", "n8n-nodes-base.readWriteFile", 1, {"fileSelector": "/samples/standup-hinglish.wav", "options": {}}, 1080, WY + 120)
 a3 = sarvam("Try: Speech to Text", {"resource": "speech", "operation": "speechToText", "binaryPropertyName": "data",
             "sttMode": "translate", "sttModel": "saaras:v4", "speechToTextOptions": {"language_code": "unknown"}}, 1240, WY + 120)
 link(a1, a2); link(a2, a3)
@@ -67,21 +67,21 @@ c2 = sarvam("Try: Text to Speech", {"resource": "speech", "operation": "textToSp
 link(c1, c2)
 
 # ═══════════════════════════ MAIN PIPELINE ═══════════════════════════
-sticky("Sticky: Pipeline", "## 🚀 The workflow · recording → classified tickets\nOpen **Upload Recording** → *Test step* → upload `samples/standup-english.wav`. Watch the classifier fan out.", -20, -120, 2900, 100, 5)
+sticky("Sticky: Pipeline", "## 🚀 The workflow · recording → classified tickets\n**Upload Recording** → *Test step* → drop in `samples/standup-hinglish.wav` → watch the classifier fan out → open the results page.", -20, -120, 2900, 100, 5)
 
 Y = 300
 def X(i): return i * 300
 def stage(i, name, title, body, color=7, w=260, h=420, dy=-160):
     sticky(name, f"### {title}\n{body}", X(i) - 40, Y + dy, w, h, color)
 
-stage(0, "Sticky: Upload", "1 · Upload", "Any audio ≤ 30 s (real-time STT limit; Batch API for longer). Optional meeting title.")
-stage(1, "Sticky: Config", "2 · Config ✏️", "GitHub owner/repo and the sheet ID. Edit here only.", 5)
-stage(2, "Sticky: Hear", "3 · Hear", "Saaras v4, *translate* → English `transcript` + `language_code`.")
-stage(3, "Sticky: Guard", "4 · Guard", "Empty or tiny transcript → polite retry page. No garbage tickets.", h=480)
-stage(4, "Sticky: Summarize", "5 · Summarize", "n8n **Summarization Chain** on Sarvam-105B → 4-6 bullets.", 6)
-stage(5, "Sticky: Extract", "6 · Extract", "n8n **Information Extractor** with a JSON schema → list of action items.", 6)
-stage(6, "Sticky: Split", "7 · Split", "One item per action. From here on, every row is a ticket.")
-stage(7, "Sticky: Classify", "8 · Classify", "n8n **Text Classifier**: bug · feature · task · decision · follow-up. Each class is a branch — add Linear, Trello, Notion…", 6, h=620, dy=-360)
+stage(0, "Sticky: Upload", "1 · Upload", "Any audio, ≤ 30 s. Optional meeting title.")
+stage(1, "Sticky: Config", "2 · Config ✏️", "GitHub repo + sheet ID. The only node you edit.", 5)
+stage(2, "Sticky: Hear", "3 · Hear 🎧", "Saaras v4 translates any language to English and tells you which one it heard.")
+stage(3, "Sticky: Guard", "4 · Guard 🛡️", "Silence or noise → a polite retry page, never a garbage ticket.", h=480)
+stage(4, "Sticky: Summarize", "5 · Summarize 📝", "n8n Summarization Chain → 4-6 bullets for people who missed the meeting.", 6)
+stage(5, "Sticky: Extract", "6 · Extract 🔍", "n8n Information Extractor + JSON schema → title, owner, priority, due for every item.", 6)
+stage(6, "Sticky: Split", "7 · Split ✂️", "One item per action. From here on, each row is a ticket.")
+stage(7, "Sticky: Classify", "8 · Classify 🏷️", "n8n Text Classifier: bug · feature · task · decision · follow-up. One output per class.", 6, h=620, dy=-360)
 
 n0 = node("Upload Recording", "n8n-nodes-base.formTrigger", 2.5, {
     "formTitle": "Turn a meeting into tickets",
@@ -151,12 +151,12 @@ n7 = node("Classify", "@n8n/n8n-nodes-langchain.textClassifier", 1.1, {
 
 LLM = node("Sarvam-105B", "@n8n/n8n-nodes-langchain.lmChatOpenAi", 1.2,
            {"model": {"__rl": True, "mode": "id", "value": "sarvam-105b-conversations"}, "options": {"temperature": 0, "maxTokens": 2048}}, X(5) - 60, Y + 220)
-sticky("Sticky: LLM", "### 🧠 Sarvam-105B as the brain\nOpenAI Chat Model node → credential **Base URL** `https://api.sarvam.ai/v1` + your Sarvam key. One model powers all three n8n AI nodes.\n`sarvam-105b-conversations` answers directly; plain `sarvam-105b` thinks first and needs a much bigger token budget.", X(4) - 40, Y + 170, 560, 220, 6)
+sticky("Sticky: LLM", "### 🧠 Sarvam-105B is the brain\nOne OpenAI Chat Model node, Base URL `https://api.sarvam.ai/v1`, powers all three n8n AI nodes. `-conversations` answers directly; plain `sarvam-105b` thinks first and needs a bigger token budget.", X(4) - 40, Y + 170, 560, 220, 6)
 
 # ── branches ──
 BX = X(8) + 60
 BYS = {"bug": Y - 320, "feature": Y - 160, "task": Y, "decision": Y + 160, "followup": Y + 320, "other": Y + 480}
-sticky("Sticky: Branches", "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) and the sheet · **decision / follow-up / other** → sheet. Every class is one node away from any tool.", BX - 40, Y - 480, 600, 1100, 1)
+sticky("Sticky: Branches", "### 9 · Branch out 🔀\n**bug / feature** → GitHub issues with labels · **task** → Jira (disabled, swap in yours) + sheet · **decision / follow-up** → sheet. Any class is one node away from Linear, Trello, Notion…", BX - 40, Y - 480, 600, 1100, 1)
 
 def gh_issue(name, label, y):
     return node(name, "n8n-nodes-base.github", 1.1, {
@@ -183,7 +183,7 @@ link(n7, j1, out=2)
 
 # ── record + finish ──
 RX = BX + 520
-sticky("Sticky: Record", "### 10 · Record + report 📋\nBranches merge → one sheet row per item (with the GitHub link when there is one) → the uploader sees the summary and every ticket.", RX - 240, Y - 160, 1020, 420, 4)
+sticky("Sticky: Record", "### 10 · Record + report 📋\nBranches merge → one sheet row per item, GitHub link included → the uploader sees the summary and every ticket.", RX - 240, Y - 160, 1020, 420, 4)
 ITEM = "$('One Item per Action').item.json"
 COLS = [("Created", "={{ $now.toISO() }}"), ("Meeting", "={{ $('Upload Recording').item.json.meeting_title || 'untitled' }}"),
         ("Type", "={{ $json.type ?? ($json.labels && $json.labels[0] ? $json.labels[0].name : '') }}"),

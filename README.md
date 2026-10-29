@@ -47,7 +47,8 @@ Create them at http://localhost:5678/home/credentials, then pick them on the nod
 
 | Sample | What to expect |
 |---|---|
-| `samples/standup-english.wav` | 5 items: bug + feature → GitHub, task, decision, follow-up → sheet |
+| `samples/standup-hinglish.wav` ⭐ | Hindi/English stand-up voiced by Bulbul v4. 5 items: bug + feature → GitHub, task, decision, follow-up → sheet. `language_code = hi-IN` |
+| `samples/standup-english.wav` | Same meeting in English |
 | `samples/standup-hindi.wav` | Hindi stand-up, same flow, `language_code = hi-IN` |
 | `samples/voice-note-bug-report.wav` | one bug → one GitHub issue |
 
@@ -60,8 +61,10 @@ Warm-up row on the canvas: three single-node demos (Hear / Think / Speak) that n
 ```bash
 npm test          # structural tests on the workflow JSON
 npm run build     # regenerate hero GIF + icons and the workflow JSON
-npm run samples   # regenerate sample recordings (macOS `say`)
-npm run import    # push the JSON into the running container
+npm run samples   # regenerate the macOS `say` samples
+SARVAM_API_KEY=sk_… python3 scripts/make-sample-bulbul.py   # regenerate the Hinglish sample with Bulbul
+npm run import    # push the JSON into the running container, credentials attached
+npm run e2e       # headless end-to-end run with real API calls (creates real issues + rows)
 ```
 
 Sticky-note images are served from `/static/workshop` (mounted by compose). To ship a standalone JSON:
