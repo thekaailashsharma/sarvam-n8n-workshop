@@ -15,7 +15,7 @@ ICON = {k: f"{ASSET_BASE}/{k}.png" for k in ("hear", "think", "speak")}
 
 GITHUB_OWNER = os.environ.get("GITHUB_OWNER", "thekaailashsharma")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "sarvam-n8n-workshop")
-SHEET_ID = os.environ.get("SHEET_ID", "1HPR_t2damLpDcFWbpqroAWEptLP_hsNk3cdkCr4oIjo")
+SHEET_ID = os.environ.get("SHEET_ID", "1VMB0tBNve0teNcL176g5Yvo9ElCld657Ab0aPY72uZA")
 
 def nid(): return str(uuid.uuid4())
 
@@ -183,20 +183,23 @@ link(n7, j1, out=2)
 
 # ── record + finish ──
 RX = BX + 520
-sticky("Sticky: Record", "### 10 · Record + report 📋\nEvery item → one sheet row (with the GitHub link when there is one) → the uploader sees the summary and the created tickets.", RX - 40, Y - 160, 820, 420, 4)
+sticky("Sticky: Record", "### 10 · Record + report 📋\nBranches merge → one sheet row per item (with the GitHub link when there is one) → the uploader sees the summary and every ticket.", RX - 240, Y - 160, 1020, 420, 4)
 ITEM = "$('One Item per Action').item.json"
 COLS = [("Created", "={{ $now.toISO() }}"), ("Meeting", "={{ $('Upload Recording').item.json.meeting_title || 'untitled' }}"),
         ("Type", "={{ $json.type ?? ($json.labels && $json.labels[0] ? $json.labels[0].name : '') }}"),
         ("Title", f"={{{{ {ITEM}.title }}}}"), ("Detail", f"={{{{ {ITEM}.detail }}}}"), ("Owner", f"={{{{ {ITEM}.owner }}}}"),
         ("Priority", f"={{{{ {ITEM}.priority }}}}"), ("Due", f"={{{{ {ITEM}.due }}}}"), ("Link", "={{ $json.html_url ?? '' }}"), ("Status", "Open")]
+m1 = node("Merge Branches", "n8n-nodes-base.merge", 3.2, {"mode": "append", "numberInputs": 6}, RX - 200, Y)
 s1 = node("Log to Sheet", "n8n-nodes-base.googleSheets", 4.7, {
     "operation": "append",
     "documentId": {"__rl": True, "mode": "id", "value": "={{ $('Config').item.json.sheetId }}"},
-    "sheetName": {"__rl": True, "mode": "id", "value": "gid=0"},
+    "sheetName": {"__rl": True, "mode": "name", "value": "Tickets"},
     "columns": {"mappingMode": "defineBelow", "value": dict(COLS), "matchingColumns": [],
                 "schema": [{"id": c, "displayName": c, "required": False, "defaultMatch": False, "display": True, "type": "string", "canBeUsedToMatch": True} for c, _ in COLS]},
     "options": {"cellFormat": "USER_ENTERED"}}, RX, Y)
-for src in (g1, g2, t1, t2, t3, t4): link(src, s1)
+for i, src in enumerate((g1, g2, t1, t2, t3, t4)):
+    connections.setdefault(src, {}).setdefault("main", [[]])[0].append({"node": m1, "type": "main", "index": i})
+link(m1, s1)
 
 s2 = node("Collect Results", "n8n-nodes-base.aggregate", 1, {"aggregate": "aggregateAllItemData", "options": {}}, RX + 240, Y)
 link(s1, s2)

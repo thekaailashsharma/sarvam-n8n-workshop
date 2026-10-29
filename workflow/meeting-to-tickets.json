@@ -8,7 +8,7 @@
         "width": 820,
         "color": 7
       },
-      "id": "d3fff7b4-91d4-4039-bc02-13b27cbc33e1",
+      "id": "72c45bac-b1ea-4354-8e3e-edd7128003b4",
       "name": "Sticky: Hero",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -24,7 +24,7 @@
         "width": 1560,
         "color": 4
       },
-      "id": "918cbc31-5055-40e6-80f7-12a79b25a2f1",
+      "id": "3d8d25e3-30eb-4553-a1b3-fd59b8505ed7",
       "name": "Sticky: Warm-up",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -40,7 +40,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "c0b7686b-b32f-46ca-9808-40fef90aede8",
+      "id": "4bbf64b2-bbc9-47f8-a8d4-b02d1970ca0f",
       "name": "Sticky: Warm-up STT",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -51,7 +51,7 @@
     },
     {
       "parameters": {},
-      "id": "81121955-601d-472f-bec1-5fa30214f912",
+      "id": "3e2512e7-c51f-4bc3-95a9-d5e19260526f",
       "name": "▶ Hear",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -65,7 +65,7 @@
         "fileSelector": "/samples/standup-hindi.wav",
         "options": {}
       },
-      "id": "b91853b2-d9f3-4f93-a66d-0001ce952041",
+      "id": "3a6ff085-c5d6-4594-be21-0512b22a737d",
       "name": "Try: Read sample",
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
@@ -85,7 +85,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "a27f99d7-b3e7-48d0-a122-6ba10ad1727b",
+      "id": "fe8ef0cb-fb64-4461-82b6-7d270a4a5188",
       "name": "Try: Speech to Text",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -101,7 +101,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "8ce5e8df-c0bd-4b3e-858b-0ef4a21928f2",
+      "id": "c70ed0ee-85d5-4c17-98dc-f429d0fedd5c",
       "name": "Sticky: Warm-up Chat",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -112,7 +112,7 @@
     },
     {
       "parameters": {},
-      "id": "6d71b23d-fb47-4361-b5b5-7ebd21c27cda",
+      "id": "4c991442-1009-4950-8ac8-59916c13ca14",
       "name": "▶ Think",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -134,7 +134,7 @@
           "reasoning_effort": "none"
         }
       },
-      "id": "4fdc1dfd-a379-454e-a568-4b2082ca90f0",
+      "id": "11c9fb44-6120-4361-b7fe-04c40b0b0214",
       "name": "Try: Chat",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -150,7 +150,7 @@
         "width": 500,
         "color": 7
       },
-      "id": "8538b5ca-c110-4b78-91c8-f3651f7b42e9",
+      "id": "bdde2297-fb84-4a8b-b4c4-bc03f6569fc6",
       "name": "Sticky: Warm-up TTS",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -161,7 +161,7 @@
     },
     {
       "parameters": {},
-      "id": "4ee16dbb-0482-443e-8e06-76b1077f233e",
+      "id": "eed4b4ca-f5dc-4020-9de8-ba5075c36748",
       "name": "▶ Speak",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
@@ -182,7 +182,7 @@
           "output_audio_codec": "mp3"
         }
       },
-      "id": "a47c4289-d276-4781-979f-4f23dd92f59f",
+      "id": "f14f4924-75d9-48d0-bdbd-758a7a03d1ef",
       "name": "Try: Text to Speech",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -198,7 +198,7 @@
         "width": 2900,
         "color": 5
       },
-      "id": "115eef31-7513-496f-b9bf-61a56c56843b",
+      "id": "672330b4-416f-4d8c-97e1-4e317c98ba03",
       "name": "Sticky: Pipeline",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -214,7 +214,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "85704de3-48eb-4b50-aa53-ef33482013d6",
+      "id": "905dbd72-3c2e-4357-8fc8-494064916503",
       "name": "Sticky: Upload",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -230,7 +230,7 @@
         "width": 260,
         "color": 5
       },
-      "id": "6e12dd4b-d729-4286-8fbe-6da54b117beb",
+      "id": "63167bc3-735e-4374-85d3-2a5b138fef70",
       "name": "Sticky: Config",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -246,7 +246,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "f795118c-99d4-413c-99f1-7462e9121d5c",
+      "id": "60e8bc15-0dc8-41ea-95b6-8102ed40efac",
       "name": "Sticky: Hear",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -262,7 +262,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "c089fe27-4b60-4e95-b46d-bdf44c1d86ee",
+      "id": "90dfb23b-2c2a-4f09-9b34-4d3a8a98c63b",
       "name": "Sticky: Guard",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -278,7 +278,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "b595065a-a2ec-437a-98de-f7958aa1a203",
+      "id": "e1c50b76-e8b8-4a0b-98a8-74d85131a482",
       "name": "Sticky: Summarize",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -294,7 +294,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "ce53c8cf-e26a-41b0-b946-2d23e3be7913",
+      "id": "c65ba659-c7b7-4ae5-a3c5-df6dfed73e78",
       "name": "Sticky: Extract",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -310,7 +310,7 @@
         "width": 260,
         "color": 7
       },
-      "id": "4d616689-c396-474a-a9ac-d7469378f2cb",
+      "id": "5e89ac18-88dd-4577-97cf-2d7da72711f4",
       "name": "Sticky: Split",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -326,7 +326,7 @@
         "width": 260,
         "color": 6
       },
-      "id": "dd114a56-d18a-49af-80c5-feb581c32bf0",
+      "id": "2565d1cf-aeb6-430a-9de1-1952cce64b10",
       "name": "Sticky: Classify",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -360,7 +360,7 @@
           "buttonLabel": "Create tickets"
         }
       },
-      "id": "4955123c-2753-469e-85a3-e004f24d225e",
+      "id": "8eca8ceb-5c30-4c08-9090-59cbf16084ca",
       "name": "Upload Recording",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.5,
@@ -368,28 +368,28 @@
         0,
         300
       ],
-      "webhookId": "b15a43a0-d08e-41f9-8ab3-d4c884669100"
+      "webhookId": "3177f1a0-5890-4889-a345-05e133b76ee9"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "3228bf61-99ba-4858-b491-47d08762cb79",
+              "id": "5eacf11c-b8d9-4fbc-8971-8e527216f634",
               "name": "githubOwner",
               "value": "thekaailashsharma",
               "type": "string"
             },
             {
-              "id": "4ad7b784-6f2a-44fc-8333-ecbb19d57a99",
+              "id": "910b6ad1-f7c9-4078-a25d-1475f3ebf015",
               "name": "githubRepo",
               "value": "sarvam-n8n-workshop",
               "type": "string"
             },
             {
-              "id": "5ef6a04e-8faf-406e-8798-945613150ede",
+              "id": "aa4c4556-55d2-4743-91a4-ebf2c28097b4",
               "name": "sheetId",
-              "value": "1HPR_t2damLpDcFWbpqroAWEptLP_hsNk3cdkCr4oIjo",
+              "value": "1VMB0tBNve0teNcL176g5Yvo9ElCld657Ab0aPY72uZA",
               "type": "string"
             }
           ]
@@ -397,7 +397,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "483df991-6457-43f6-afa4-335b2d30ce7e",
+      "id": "378e3d23-89fc-483b-8dcc-827549a75cb7",
       "name": "Config",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -417,7 +417,7 @@
           "language_code": "unknown"
         }
       },
-      "id": "13470072-1d76-466a-8af7-88d18095e05d",
+      "id": "84031ebe-b691-434a-be89-d7915ad34d34",
       "name": "Sarvam: Transcribe",
       "type": "n8n-nodes-sarvam.sarvam",
       "typeVersion": 1,
@@ -437,7 +437,7 @@
           },
           "conditions": [
             {
-              "id": "fc2128ae-412f-4521-a61f-183d8d9f60fb",
+              "id": "00312330-be85-4816-b858-19ec62e74e64",
               "leftValue": "={{ ($json.transcript || '').trim().length }}",
               "rightValue": 20,
               "operator": {
@@ -450,7 +450,7 @@
         },
         "options": {}
       },
-      "id": "4a5690c9-29f2-4ba0-b071-473509ef4a1e",
+      "id": "a13d5606-4c9c-4f4f-af47-08169a928d85",
       "name": "Heard Anything?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
@@ -467,7 +467,7 @@
         "completionMessage": "The recording seems silent or too short. Please try again with a clearer file.",
         "options": {}
       },
-      "id": "d725e1a3-d464-4949-bf72-91f43acef15e",
+      "id": "9a68aa9c-077c-4e8b-a379-ac166f40f319",
       "name": "Couldn't Hear",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -475,7 +475,7 @@
         900,
         500
       ],
-      "webhookId": "212dc6e9-396c-449d-bce4-195157d7c70d"
+      "webhookId": "bf3a6175-2176-4955-8627-a225a93085ab"
     },
     {
       "parameters": {
@@ -492,7 +492,7 @@
           }
         }
       },
-      "id": "1d4a32ba-11b9-41fb-b9ea-b3a52ab4c7d0",
+      "id": "0a796c00-a9af-4916-b4f0-eda5e3b08f58",
       "name": "Summarize Meeting",
       "type": "@n8n/n8n-nodes-langchain.chainSummarization",
       "typeVersion": 2.1,
@@ -510,7 +510,7 @@
           "systemPromptTemplate": "You are an expert meeting scribe. Extract every action item, decision and follow-up from the transcript. Never invent names or dates. {format_instructions}"
         }
       },
-      "id": "c052dbeb-d002-45e1-b83c-a449164cb8c4",
+      "id": "fd0d3477-6e49-4516-bafe-b8cb8aeeee0a",
       "name": "Extract Action Items",
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.2,
@@ -525,7 +525,7 @@
         "include": "noOtherFields",
         "options": {}
       },
-      "id": "14528776-b111-41bd-b1a0-6bdab21f4fc1",
+      "id": "e6310835-2813-4c77-a474-a9d0d70ecbc5",
       "name": "One Item per Action",
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
@@ -566,7 +566,7 @@
           "systemPromptTemplate": "Classify the meeting action item into exactly one category.\n{categories}\n\nJust the category label."
         }
       },
-      "id": "f4026297-af60-42b8-b1bb-936d4188cc9d",
+      "id": "8cb16d08-38b5-46e3-9d83-f096d5cd4c64",
       "name": "Classify",
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
@@ -587,7 +587,7 @@
           "maxTokens": 2048
         }
       },
-      "id": "8fdf1b49-edfb-4749-ac9b-77414032967d",
+      "id": "24bb28de-e041-4309-8ff9-b46439e9fa47",
       "name": "Sarvam-105B",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
@@ -603,7 +603,7 @@
         "width": 560,
         "color": 6
       },
-      "id": "c6fd11bf-9b99-4487-9ae1-6621a4325d31",
+      "id": "5e50506c-2acf-46b3-81de-8d5d5ee58ce0",
       "name": "Sticky: LLM",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -619,7 +619,7 @@
         "width": 600,
         "color": 1
       },
-      "id": "6719c238-127b-4335-9cbe-249e4dd37656",
+      "id": "65a21a83-ddb9-4605-8ff7-1d12c412ad46",
       "name": "Sticky: Branches",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -652,7 +652,7 @@
         ],
         "assignees": []
       },
-      "id": "a7841367-e609-445c-ab81-126c2208d964",
+      "id": "03da8863-ce82-4f4d-a2a2-55c8cb570553",
       "name": "GitHub: Bug Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -685,7 +685,7 @@
         ],
         "assignees": []
       },
-      "id": "26f5aa0d-bf2f-4064-8b66-aad4e1c87b17",
+      "id": "08a0a501-64f1-46bd-9605-5fc3a265bb03",
       "name": "GitHub: Feature Issue",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -713,7 +713,7 @@
           "description": "={{ $json.detail }}"
         }
       },
-      "id": "3abcac2f-9d0b-4a90-a996-44820be78091",
+      "id": "61ba1141-9973-458f-9c62-222c5f54458e",
       "name": "Jira: Task (disabled)",
       "type": "n8n-nodes-base.jira",
       "typeVersion": 1,
@@ -728,7 +728,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "dfe06749-19a9-48ff-bc90-c269920fd264",
+              "id": "550f6754-4156-40f7-ab02-326cd71a9d4c",
               "name": "type",
               "value": "task",
               "type": "string"
@@ -738,7 +738,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "45f533c5-57f5-4dfb-88a8-08c3cf86be5d",
+      "id": "e088c089-f69f-4a09-9708-0aed77af465d",
       "name": "Tag: Task",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -752,7 +752,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "41d6e104-5c0d-48c0-a8c2-ef4d842db8d3",
+              "id": "62195ba8-8b8c-4fa8-bb74-1fa05eabd0b0",
               "name": "type",
               "value": "decision",
               "type": "string"
@@ -762,7 +762,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "42ae8238-2145-4986-8517-533919813d91",
+      "id": "edd73ced-6e8f-42b7-8a88-597fc0416063",
       "name": "Tag: Decision",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -776,7 +776,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "99b4c683-bddc-4620-8ca6-0ea334cd5ad4",
+              "id": "062a7826-b921-42af-b390-ca02cdc6cdd9",
               "name": "type",
               "value": "followup",
               "type": "string"
@@ -786,7 +786,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "cb7efd93-e77c-4faa-80f2-4c118552a5ba",
+      "id": "cc452e45-16dc-4cab-a384-dc5bfbecd403",
       "name": "Tag: Follow-up",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -800,7 +800,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "43adb6ae-1cc7-4c1a-aefa-330fd4e05ebc",
+              "id": "df8716e5-0ba7-44b7-b728-1dd00a873606",
               "name": "type",
               "value": "other",
               "type": "string"
@@ -810,7 +810,7 @@
         "includeOtherFields": true,
         "options": {}
       },
-      "id": "94083989-238f-4154-a77a-aaf29581f745",
+      "id": "0edc29fa-dce2-480e-bc1a-37f40f0a0156",
       "name": "Tag: Other",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -821,18 +821,32 @@
     },
     {
       "parameters": {
-        "content": "### 10 · Record + report 📋\nEvery item → one sheet row (with the GitHub link when there is one) → the uploader sees the summary and the created tickets.",
+        "content": "### 10 · Record + report 📋\nBranches merge → one sheet row per item (with the GitHub link when there is one) → the uploader sees the summary and every ticket.",
         "height": 420,
-        "width": 820,
+        "width": 1020,
         "color": 4
       },
-      "id": "37a7ed3d-304e-4a24-80f0-ad7b49ffeb30",
+      "id": "2301a9b3-153e-42c3-9f20-19e9c9c7ac98",
       "name": "Sticky: Record",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2940,
+        2740,
         140
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "append",
+        "numberInputs": 6
+      },
+      "id": "7c196fbf-432f-4739-a97d-24b0aa3777d8",
+      "name": "Merge Branches",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2780,
+        300
       ]
     },
     {
@@ -845,8 +859,8 @@
         },
         "sheetName": {
           "__rl": true,
-          "mode": "id",
-          "value": "gid=0"
+          "mode": "name",
+          "value": "Tickets"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -960,7 +974,7 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "8f49d741-b062-48ee-b452-69f2d14623f7",
+      "id": "0040dbf9-00b5-4bde-9b17-1894121aa47b",
       "name": "Log to Sheet",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -974,7 +988,7 @@
         "aggregate": "aggregateAllItemData",
         "options": {}
       },
-      "id": "113bc5f5-f264-4291-a72e-1e468cdf2f42",
+      "id": "5d425617-e23f-4801-8581-e3278eed45df",
       "name": "Collect Results",
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
@@ -990,7 +1004,7 @@
         "responseText": "={{ (() => {\n  const items = $json.data || [];\n  const summary = ($('Summarize Meeting').first().json.response?.text ?? $('Summarize Meeting').first().json.output?.text ?? '').toString();\n  const lang = $('Sarvam: Transcribe').first().json.language_code;\n  const row = (i) => `<li><b>${i.Type}</b> · ${i.Link ? `<a href=\"${i.Link}\" target=\"_blank\">${i.Title}</a>` : i.Title} <small>${i.Priority}${i.Owner ? ' · ' + i.Owner : ''}</small></li>`;\n  return `<div style=\"font-family:system-ui;max-width:720px;margin:40px auto;line-height:1.5\">\n    <h1>✅ ${items.length} item${items.length === 1 ? '' : 's'} created</h1>\n    <p style=\"color:#666\">Spoken language: ${lang} · transcribed by Sarvam Saaras v4 · triaged by Sarvam-105B</p>\n    <h3>Summary</h3><pre style=\"white-space:pre-wrap;background:#f6f6f8;padding:12px;border-radius:8px\">${summary}</pre>\n    <h3>Tickets</h3><ul>${items.map(row).join('')}</ul></div>`;\n})() }}",
         "options": {}
       },
-      "id": "01036083-6bce-4f0e-9ac3-448dbf983130",
+      "id": "e495f5cd-b5d3-4e8b-92b2-436c65e1022a",
       "name": "Show Results",
       "type": "n8n-nodes-base.form",
       "typeVersion": 2.5,
@@ -998,7 +1012,7 @@
         3460,
         300
       ],
-      "webhookId": "4becd7c6-8667-4854-8764-4ab9894491fb"
+      "webhookId": "83786107-3208-4644-ba76-930d9c68704a"
     }
   ],
   "connections": {
@@ -1101,7 +1115,7 @@
       "main": [
         [
           {
-            "node": "Log to Sheet",
+            "node": "Merge Branches",
             "type": "main",
             "index": 0
           }
@@ -1112,9 +1126,9 @@
       "main": [
         [
           {
-            "node": "Log to Sheet",
+            "node": "Merge Branches",
             "type": "main",
-            "index": 0
+            "index": 1
           }
         ]
       ]
@@ -1123,9 +1137,9 @@
       "main": [
         [
           {
-            "node": "Log to Sheet",
+            "node": "Merge Branches",
             "type": "main",
-            "index": 0
+            "index": 2
           }
         ]
       ]
@@ -1134,9 +1148,9 @@
       "main": [
         [
           {
-            "node": "Log to Sheet",
+            "node": "Merge Branches",
             "type": "main",
-            "index": 0
+            "index": 3
           }
         ]
       ]
@@ -1145,14 +1159,25 @@
       "main": [
         [
           {
-            "node": "Log to Sheet",
+            "node": "Merge Branches",
             "type": "main",
-            "index": 0
+            "index": 4
           }
         ]
       ]
     },
     "Tag: Other": {
+      "main": [
+        [
+          {
+            "node": "Merge Branches",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Merge Branches": {
       "main": [
         [
           {

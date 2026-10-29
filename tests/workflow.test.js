@@ -35,7 +35,12 @@ test('classifier fans out: one branch per category plus other, all ending in the
   assert.equal(byName['Classify'].parameters.options.fallback, 'other');
   const expected = ['GitHub: Bug Issue', 'GitHub: Feature Issue', 'Tag: Task', 'Tag: Decision', 'Tag: Follow-up', 'Tag: Other'];
   expected.forEach((target, i) => assert.ok(next('Classify', i).includes(target), `output ${i} → ${target}`));
-  for (const t of expected) assert.deepEqual(next(t), ['Log to Sheet'], `${t} → Log to Sheet`);
+  expected.forEach((t, i) => {
+    const c = wf.connections[t].main[0].find((x) => x.node === 'Merge Branches');
+    assert.ok(c && c.index === i, `${t} → Merge Branches input ${i}`);
+  });
+  assert.equal(byName['Merge Branches'].parameters.numberInputs, 6);
+  assert.deepEqual(next('Merge Branches'), ['Log to Sheet']);
   assert.ok(next('Classify', 2).includes('Jira: Task (disabled)'));
   assert.equal(byName['Jira: Task (disabled)'].disabled, true);
   assert.deepEqual(next('Log to Sheet'), ['Collect Results']);
