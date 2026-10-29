@@ -71,3 +71,19 @@ npm run e2e       # headless end-to-end run with real API calls (creates real is
 
 Sticky-note images are served from `/static/workshop` (mounted by compose). To ship a standalone JSON:
 `ASSET_BASE=https://raw.githubusercontent.com/<owner>/<repo>/main/assets npm run build`.
+
+## Bonus canvas: ABCs of n8n (visual, runnable)
+
+`workflow/abcs-of-n8n.json` is a remix of Abhay's node reference (abhay.co/go): every major node type on one canvas,
+each with a pictogram card and a one-liner, animated section banners, and three **runnable** chains that start from
+one Sample Data node (data manipulation, flow control with IF/Merge/Loop, Code stats + HTTP). The AI Agent section
+runs on Sarvam-105B through the chat UI.
+
+```bash
+npm run build:abc     # regenerate banners, pictograms and the JSON
+npm run import:abc    # import into the running container (credentials attached)
+```
+
+Note: Sarvam's OpenAI-compatible endpoint currently rejects tool-call messages, so the Calculator tool is wired but
+disabled; enable it with an OpenAI or Gemini model to show tool use.
+

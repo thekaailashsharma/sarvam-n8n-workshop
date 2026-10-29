@@ -12,6 +12,8 @@
     "samples": "bash scripts/make-samples.sh",
     "build": "python3 scripts/make-assets.py && python3 scripts/build-workflow.py",
     "import": "python3 scripts/import.py",
-    "e2e": "python3 scripts/e2e.py"
+    "e2e": "python3 scripts/e2e.py",
+    "build:abc": "python3 scripts/make-abc-assets.py && python3 scripts/build-abc.py",
+    "import:abc": "python3 scripts/import-abc.py"
   }
 }
