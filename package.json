@@ -11,6 +11,6 @@
     "sync": "node scripts/sync-code-node.mjs",
     "samples": "bash scripts/make-samples.sh",
     "build": "python3 scripts/make-assets.py && python3 scripts/build-workflow.py",
-    "import": "docker cp workflow/meeting-to-tickets.json sarvam-n8n:/tmp/wf.json && docker exec sarvam-n8n n8n import:workflow --input=/tmp/wf.json"
+    "import": "python3 scripts/import.py"
   }
 }
